@@ -3,7 +3,7 @@ set -x
 . ~/dot.for.metplus
 
 #export MODEL=FV3GFS
-export vday=20190529
+export vday=20190601
 
 echo 'Actual output starts here:'
 
