@@ -8,5 +8,5 @@ export vday=20190720
 echo 'Actual output starts here:'
 
 master_metplus.py \
--c ${METPLUS_PATH}/yl/parm/models/gfs_24h.conf \
--c ${METPLUS_PATH}/yl/parm/system.conf.dell
+-c ${YLMETPLUS_PATH}/yl/parm/models/gfs_24h.conf \
+-c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

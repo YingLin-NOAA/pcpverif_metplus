@@ -1,0 +1,436 @@
++ . /u/Ying.Lin/dots/dot.for.metplus
++ . /usrx/local/prod/lmod/lmod/init/ksh
++ LMOD_PKG=/usrx/local/prod/lmod/lmod
++ LMOD_DIR=/usrx/local/prod/lmod/lmod/libexec/
++ LMOD_CMD=/usrx/local/prod/lmod/lmod/libexec/lmod
++ MODULESHOME=/usrx/local/prod/lmod/lmod
++ export LMOD_CMD
++ export LMOD_PKG
++ export LMOD_DIR
++ export MODULESHOME
++ export LMOD_DIR
++ module purge
++ /usrx/local/prod/lmod/lmod/libexec/lmod sh purge
++ eval unset 'ADVISOR_2018_DIR;' unset 'BINARY_TYPE_HPC;' unset '__LMOD_REF_COUNT_CLASSPATH;' unset 'CLASSPATH;' unset 'CLCK_ROOT;' unset 'CNVGRIB;' unset 'CNVGRIB21_GFS;' unset 'COMDATEROOT;' unset 'COMLISTROOT;' unset 'COPYGB;' unset 'COPYGB2;' unset '__LMOD_REF_COUNT_CPATH;' unset 'CPATH;' unset '__LMOD_REF_COUNT_CPLUS_INCLUDE_PATH;' unset 'CPLUS_INCLUDE_PATH;' unset 'DAALROOT;' unset 'DEGRIB2;' unset 'FORT_BUFFERED;' unset 'FSYNC;' unset 'GDBSERVER_MIC;' unset 'GDB_CROSS;' unset 'GRB2INDEX;' unset 'GRBINDEX;' unset 'GRIB2GRIB;' unset '__LMOD_REF_COUNT_INFOPATH;' unset 'INFOPATH;' unset 'INSPECTOR_2018_DIR;' unset 'INTEL_LICENSE_FILE;' unset 'INTEL_PYTHONHOME;' unset 'IPPROOT;' unset 'I_MPI_CC;' unset 'I_MPI_CXX;' unset 'I_MPI_EXTRA_FILESYSTEM;' unset 'I_MPI_EXTRA_FILESYSTEM_LIST;' unset 'I_MPI_F77;' unset 'I_MPI_F90;' unset 'I_MPI_FC;' unset 'I_MPI_HYDRA_BOOTSTRAP;' unset 'I_MPI_HYDRA_IFACE;' unset 'I_MPI_LSF_USE_COLLECTIVE_LAUNCH;' unset 'I_MPI_ROOT;' unset 'KMP_AFFINITY;' unset '__LMOD_REF_COUNT_LD_LIBRARY_PATH;' unset 'LD_LIBRARY_PATH;' unset '__LMOD_REF_COUNT_LIBRARY_PATH;' unset 'LIBRARY_PATH;' unset 'LMOD_AVAIL_STYLE;' unset 'LMOD_EXACT_MATCH;' unset 'LMOD_FAMILY_COMPILER;' unset 'LMOD_FAMILY_COMPILER_VERSION;' unset 'LMOD_FAMILY_MPI;' unset 'LMOD_FAMILY_MPI_VERSION;' unset 'LMOD_PACKAGE_PATH;' unset '__LMOD_REF_COUNT_LOADEDMODULES;' unset 'LOADEDMODULES;' unset 'LSF_BINDIR;' unset 'LSF_ENVDIR;' unset 'LSF_LIBDIR;' unset 'LSF_SERVERDIR;' __LMOD_REF_COUNT_MANPATH='"/usrx/local/prod/lmod/lmod/share/man:1";' export '__LMOD_REF_COUNT_MANPATH;' MANPATH='"/usrx/local/prod/lmod/lmod/share/man::";' export 'MANPATH;' unset 'MDATE;' unset 'MKLROOT;' MODULEPATH='"/usrx/local/prod/lmod/lmod/modulefiles/Core:/usrx/local/prod/modulefiles/core_third:/usrx/local/prod/modulefiles/defs:/gpfs/dell1/nco/ops/nwprod/modulefiles/core_prod:/u/Benjamin.Blake/modulefiles";' export 'MODULEPATH;' unset 'MPM_LAUNCHER;' unset 'NDATE;' unset 'NHOUR;' unset '__LMOD_REF_COUNT_NLSPATH;' unset 'NLSPATH;' unset 'OMP_NUM_THREADS;' __LMOD_REF_COUNT_PATH='"/usr/lib64/qt-3.3/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/usr/lpp/mmfs/bin:1;/opt/ibutils/bin:1;/opt/dell/srvadmin/bin:1;/u/Ying.Lin/.local/bin:1;/u/Ying.Lin/bin:1;.:1";' export '__LMOD_REF_COUNT_PATH;' PATH='"/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin:/opt/ibutils/bin:/opt/dell/srvadmin/bin:/u/Ying.Lin/.local/bin:/u/Ying.Lin/bin:.";' export 'PATH;' unset 'PKG_CONFIG_PATH;' unset 'PSTLROOT;' unset 'PYTHONPATH;' unset 'SITE;' unset 'TBBROOT;' unset 'TOCGRIB;' unset 'TOCGRIB2;' unset 'TOCGRIB2SUPER;' unset 'UTILROOT;' unset 'VT_ADD_LIBS;' unset 'VT_ARCH;' unset 'VT_LIB_DIR;' unset 'VT_MPI;' unset 'VT_ROOT;' unset 'VT_SLIB_DIR;' unset 'WGRIB;' unset 'WGRIB2;' unset 'XLSF_UIDDIR;' unset '__LMOD_REF_COUNT__LMFILES_;' unset '_LMFILES_;' _ModuleTable001_='"X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPTcyMDAsWyJjX3Nob3J0VGltZSJdPTEuMDIxNTAyOTcxNjQ5MixkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXt9LG1wYXRoQT17Ii91c3J4L2xvY2FsL3Byb2QvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnMiLCIvZ3Bmcy9kZWxsMS9uY28vb3BzL253cHJvZC9tb2R1bGVmaWxlcy9jb3JlX3Byb2QiLCIvdS9CZW5qYW1pbi5CbGFrZS9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvdXNyeC9sb2NhbC9wcm9kL2xtb2QvbG1vZC9tb2R1bGVm";' export '_ModuleTable001_;' _ModuleTable002_='"aWxlcy9Db3JlOi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29yZV90aGlyZDovdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnM6L2dwZnMvZGVsbDEvbmNvL29wcy9ud3Byb2QvbW9kdWxlZmlsZXMvY29yZV9wcm9kIix9";' export '_ModuleTable002_;' _ModuleTable_Sz_='"2";' export '_ModuleTable_Sz_;' unset '_ModuleTable004_;' unset '_ModuleTable005_;' unset '_ModuleTable006_;' unset '_ModuleTable007_;'
++ unset ADVISOR_2018_DIR
++ unset BINARY_TYPE_HPC
++ unset __LMOD_REF_COUNT_CLASSPATH
++ unset CLASSPATH
++ unset CLCK_ROOT
++ unset CNVGRIB
++ unset CNVGRIB21_GFS
++ unset COMDATEROOT
++ unset COMLISTROOT
++ unset COPYGB
++ unset COPYGB2
++ unset __LMOD_REF_COUNT_CPATH
++ unset CPATH
++ unset __LMOD_REF_COUNT_CPLUS_INCLUDE_PATH
++ unset CPLUS_INCLUDE_PATH
++ unset DAALROOT
++ unset DEGRIB2
++ unset FORT_BUFFERED
++ unset FSYNC
++ unset GDBSERVER_MIC
++ unset GDB_CROSS
++ unset GRB2INDEX
++ unset GRBINDEX
++ unset GRIB2GRIB
++ unset __LMOD_REF_COUNT_INFOPATH
++ unset INFOPATH
++ unset INSPECTOR_2018_DIR
++ unset INTEL_LICENSE_FILE
++ unset INTEL_PYTHONHOME
++ unset IPPROOT
++ unset I_MPI_CC
++ unset I_MPI_CXX
++ unset I_MPI_EXTRA_FILESYSTEM
++ unset I_MPI_EXTRA_FILESYSTEM_LIST
++ unset I_MPI_F77
++ unset I_MPI_F90
++ unset I_MPI_FC
++ unset I_MPI_HYDRA_BOOTSTRAP
++ unset I_MPI_HYDRA_IFACE
++ unset I_MPI_LSF_USE_COLLECTIVE_LAUNCH
++ unset I_MPI_ROOT
++ unset KMP_AFFINITY
++ unset __LMOD_REF_COUNT_LD_LIBRARY_PATH
++ unset LD_LIBRARY_PATH
++ unset __LMOD_REF_COUNT_LIBRARY_PATH
++ unset LIBRARY_PATH
++ unset LMOD_AVAIL_STYLE
++ unset LMOD_EXACT_MATCH
++ unset LMOD_FAMILY_COMPILER
++ unset LMOD_FAMILY_COMPILER_VERSION
++ unset LMOD_FAMILY_MPI
++ unset LMOD_FAMILY_MPI_VERSION
++ unset LMOD_PACKAGE_PATH
++ unset __LMOD_REF_COUNT_LOADEDMODULES
++ unset LOADEDMODULES
++ unset LSF_BINDIR
++ unset LSF_ENVDIR
++ unset LSF_LIBDIR
++ unset LSF_SERVERDIR
++ __LMOD_REF_COUNT_MANPATH=/usrx/local/prod/lmod/lmod/share/man:1
++ export __LMOD_REF_COUNT_MANPATH
++ MANPATH=/usrx/local/prod/lmod/lmod/share/man::
++ export MANPATH
++ unset MDATE
++ unset MKLROOT
++ MODULEPATH=/usrx/local/prod/lmod/lmod/modulefiles/Core:/usrx/local/prod/modulefiles/core_third:/usrx/local/prod/modulefiles/defs:/gpfs/dell1/nco/ops/nwprod/modulefiles/core_prod:/u/Benjamin.Blake/modulefiles
++ export MODULEPATH
++ unset MPM_LAUNCHER
++ unset NDATE
++ unset NHOUR
++ unset __LMOD_REF_COUNT_NLSPATH
++ unset NLSPATH
++ unset OMP_NUM_THREADS
++ __LMOD_REF_COUNT_PATH='/usr/lib64/qt-3.3/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/usr/lpp/mmfs/bin:1;/opt/ibutils/bin:1;/opt/dell/srvadmin/bin:1;/u/Ying.Lin/.local/bin:1;/u/Ying.Lin/bin:1;.:1'
++ export __LMOD_REF_COUNT_PATH
++ PATH=/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin:/opt/ibutils/bin:/opt/dell/srvadmin/bin:/u/Ying.Lin/.local/bin:/u/Ying.Lin/bin:.
++ export PATH
++ unset PKG_CONFIG_PATH
++ unset PSTLROOT
++ unset PYTHONPATH
++ unset SITE
++ unset TBBROOT
++ unset TOCGRIB
++ unset TOCGRIB2
++ unset TOCGRIB2SUPER
++ unset UTILROOT
++ unset VT_ADD_LIBS
++ unset VT_ARCH
++ unset VT_LIB_DIR
++ unset VT_MPI
++ unset VT_ROOT
++ unset VT_SLIB_DIR
++ unset WGRIB
++ unset WGRIB2
++ unset XLSF_UIDDIR
++ unset __LMOD_REF_COUNT__LMFILES_
++ unset _LMFILES_
++ _ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPTcyMDAsWyJjX3Nob3J0VGltZSJdPTEuMDIxNTAyOTcxNjQ5MixkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXt9LG1wYXRoQT17Ii91c3J4L2xvY2FsL3Byb2QvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnMiLCIvZ3Bmcy9kZWxsMS9uY28vb3BzL253cHJvZC9tb2R1bGVmaWxlcy9jb3JlX3Byb2QiLCIvdS9CZW5qYW1pbi5CbGFrZS9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvdXNyeC9sb2NhbC9wcm9kL2xtb2QvbG1vZC9tb2R1bGVm
++ export _ModuleTable001_
++ _ModuleTable002_=aWxlcy9Db3JlOi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29yZV90aGlyZDovdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnM6L2dwZnMvZGVsbDEvbmNvL29wcy9ud3Byb2QvbW9kdWxlZmlsZXMvY29yZV9wcm9kIix9
++ export _ModuleTable002_
++ _ModuleTable_Sz_=2
++ export _ModuleTable_Sz_
++ unset _ModuleTable004_
++ unset _ModuleTable005_
++ unset _ModuleTable006_
++ unset _ModuleTable007_
++ module use /usrx/local/dev/modulefiles/
++ /usrx/local/prod/lmod/lmod/libexec/lmod sh use /usrx/local/dev/modulefiles/
++ eval MODULEPATH='"/usrx/local/dev/modulefiles:/usrx/local/prod/lmod/lmod/modulefiles/Core:/usrx/local/prod/modulefiles/core_third:/usrx/local/prod/modulefiles/defs:/gpfs/dell1/nco/ops/nwprod/modulefiles/core_prod:/u/Benjamin.Blake/modulefiles";' export 'MODULEPATH;' _ModuleTable001_='"X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPTcyMDAsWyJjX3Nob3J0VGltZSJdPTEuMDIxNTAyOTcxNjQ5MixkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXt9LG1wYXRoQT17Ii91c3J4L2xvY2FsL2Rldi9tb2R1bGVmaWxlcyIsIi91c3J4L2xvY2FsL3Byb2QvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnMiLCIvZ3Bmcy9kZWxsMS9uY28vb3BzL253cHJvZC9tb2R1bGVmaWxlcy9jb3JlX3Byb2QiLCIvdS9CZW5qYW1pbi5CbGFrZS9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvdXNy";' export '_ModuleTable001_;' _ModuleTable002_='"eC9sb2NhbC9wcm9kL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlOi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29yZV90aGlyZDovdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnM6L2dwZnMvZGVsbDEvbmNvL29wcy9ud3Byb2QvbW9kdWxlZmlsZXMvY29yZV9wcm9kIix9";' export '_ModuleTable002_;' _ModuleTable_Sz_='"2";' export '_ModuleTable_Sz_;'
++ MODULEPATH=/usrx/local/dev/modulefiles:/usrx/local/prod/lmod/lmod/modulefiles/Core:/usrx/local/prod/modulefiles/core_third:/usrx/local/prod/modulefiles/defs:/gpfs/dell1/nco/ops/nwprod/modulefiles/core_prod:/u/Benjamin.Blake/modulefiles
++ export MODULEPATH
++ _ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPTcyMDAsWyJjX3Nob3J0VGltZSJdPTEuMDIxNTAyOTcxNjQ5MixkZXB0aFQ9e30sZmFtaWx5PXt9LG1UPXt9LG1wYXRoQT17Ii91c3J4L2xvY2FsL2Rldi9tb2R1bGVmaWxlcyIsIi91c3J4L2xvY2FsL3Byb2QvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnMiLCIvZ3Bmcy9kZWxsMS9uY28vb3BzL253cHJvZC9tb2R1bGVmaWxlcy9jb3JlX3Byb2QiLCIvdS9CZW5qYW1pbi5CbGFrZS9tb2R1bGVmaWxlcyIsfSxbInN5c3RlbUJhc2VNUEFUSCJdPSIvdXNy
++ export _ModuleTable001_
++ _ModuleTable002_=eC9sb2NhbC9wcm9kL2xtb2QvbG1vZC9tb2R1bGVmaWxlcy9Db3JlOi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29yZV90aGlyZDovdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2RlZnM6L2dwZnMvZGVsbDEvbmNvL29wcy9ud3Byb2QvbW9kdWxlZmlsZXMvY29yZV9wcm9kIix9
++ export _ModuleTable002_
++ _ModuleTable_Sz_=2
++ export _ModuleTable_Sz_
++ module load metplus/2.1
++ /usrx/local/prod/lmod/lmod/libexec/lmod sh load metplus/2.1
++ eval ADVISOR_2018_DIR='"/usrx/local/prod/intel/2018UP01/advisor_2018";' export 'ADVISOR_2018_DIR;' __LMOD_REF_COUNT_CLASSPATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64/mpi.jar:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/daal.jar:1";' export '__LMOD_REF_COUNT_CLASSPATH;' CLASSPATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64/mpi.jar:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/daal.jar";' export 'CLASSPATH;' CLCK_ROOT='"/usrx/local/prod/intel/2018UP01/clck_latest";' export 'CLCK_ROOT;' CNVGRIB='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/cnvgrib";' export 'CNVGRIB;' CNVGRIB21_GFS='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/cnvgrib21_gfs";' export 'CNVGRIB21_GFS;' COPYGB='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/copygb";' export 'COPYGB;' COPYGB2='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/copygb2";' export 'COPYGB2;' __LMOD_REF_COUNT_CPATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/pstl/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/include:1";' export '__LMOD_REF_COUNT_CPATH;' CPATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/pstl/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/include";' export 'CPATH;' __LMOD_REF_COUNT_CPLUS_INCLUDE_PATH='"/usrx/local/prod/intel/2018UP01/clck_latest/include:1";' export '__LMOD_REF_COUNT_CPLUS_INCLUDE_PATH;' CPLUS_INCLUDE_PATH='"/usrx/local/prod/intel/2018UP01/clck_latest/include";' export 'CPLUS_INCLUDE_PATH;' DAALROOT='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal";' export 'DAALROOT;' DEGRIB2='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/degrib2";' export 'DEGRIB2;' GDBSERVER_MIC='"/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin/gdbserver";' export 'GDBSERVER_MIC;' GDB_CROSS='"/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin/gdb-ia";' export 'GDB_CROSS;' GRB2INDEX='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/grb2index";' export 'GRB2INDEX;' GRBINDEX='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/grbindex";' export 'GRBINDEX;' GRIB2GRIB='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/grib2grib";' export 'GRIB2GRIB;' __LMOD_REF_COUNT_INFOPATH='"/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/info:1;info_gdb_igfx:1";' export '__LMOD_REF_COUNT_INFOPATH;' INFOPATH='"/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/info:info_gdb_igfx";' export 'INFOPATH;' INSPECTOR_2018_DIR='"/usrx/local/prod/intel/2018UP01/inspector_2018";' export 'INSPECTOR_2018_DIR;' INTEL_LICENSE_FILE='"/usrx/local/prod/intel/licenses";' export 'INTEL_LICENSE_FILE;' INTEL_PYTHONHOME='"/usrx/local/prod/intel/2018UP01/debugger_2018/python/intel64";' export 'INTEL_PYTHONHOME;' IPPROOT='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp";' export 'IPPROOT;' I_MPI_HYDRA_IFACE='"ib0";' export 'I_MPI_HYDRA_IFACE;' I_MPI_ROOT='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi";' export 'I_MPI_ROOT;' __LMOD_REF_COUNT_LD_LIBRARY_PATH='"/usrx/local/prod/intel/2018UP01/itac_latest/slib:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:1;/usrx/local/prod/intel/2018UP01/debugger_2018/iga/lib:1;/usrx/local/prod/intel/2018UP01/debugger_2018/libipt/intel64/lib:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4:1;/usrx/local/dev/packages/met/8.1/external_libs/lib:1;/usrx/local/prod/packages/python/2.7.14/lib:1;/usrx/local/dev/packages/python/2.7.14/lib:1";' export '__LMOD_REF_COUNT_LD_LIBRARY_PATH;' LD_LIBRARY_PATH='"/usrx/local/prod/intel/2018UP01/itac_latest/slib:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:/usrx/local/prod/intel/2018UP01/debugger_2018/iga/lib:/usrx/local/prod/intel/2018UP01/debugger_2018/libipt/intel64/lib:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4:/usrx/local/dev/packages/met/8.1/external_libs/lib:/usrx/local/prod/packages/python/2.7.14/lib:/usrx/local/dev/packages/python/2.7.14/lib";' export 'LD_LIBRARY_PATH;' __LMOD_REF_COUNT_LIBRARY_PATH='"/usrx/local/prod/intel/2018UP01/clck_latest/lib/intel64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4:1";' export '__LMOD_REF_COUNT_LIBRARY_PATH;' LIBRARY_PATH='"/usrx/local/prod/intel/2018UP01/clck_latest/lib/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4";' export 'LIBRARY_PATH;' LMOD_FAMILY_COMPILER='"ips";' export 'LMOD_FAMILY_COMPILER;' LMOD_FAMILY_COMPILER_VERSION='"18.0.1.163";' export 'LMOD_FAMILY_COMPILER_VERSION;' __LMOD_REF_COUNT_LOADEDMODULES='"python/2.7.14:1;met/8.1:1;ips/18.0.1.163:1;grib_util/1.0.6:1;NCO/4.7.0:1;metplus/2.1:1";' export '__LMOD_REF_COUNT_LOADEDMODULES;' LOADEDMODULES='"python/2.7.14:met/8.1:ips/18.0.1.163:grib_util/1.0.6:NCO/4.7.0:metplus/2.1";' export 'LOADEDMODULES;' __LMOD_REF_COUNT_MANPATH='"/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/share/man:1;/usrx/local/prod/intel/2018UP01/itac_latest/man:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/man/common:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/man:1;/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/man:1;/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-igfx/man:1;/usrx/local/dev/packages/python/2.7.14/share/man:1;/usrx/local/prod/lmod/lmod/share/man:1;/usrx/local/prod/intel/2018UP01/inspector_2018/man:1;/usrx/local/prod/intel/2018UP01/advisor_2018/man:1";' export '__LMOD_REF_COUNT_MANPATH;' MANPATH='"/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/share/man:/usrx/local/prod/intel/2018UP01/itac_latest/man:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/man/common:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/man:/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/man:/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-igfx/man:/usrx/local/dev/packages/python/2.7.14/share/man:/usrx/local/prod/lmod/lmod/share/man::/usrx/local/prod/intel/2018UP01/inspector_2018/man:/usrx/local/prod/intel/2018UP01/advisor_2018/man";' export 'MANPATH;' METPLUS_PATH='"/usrx/local/dev/packages/met/METplus/METplus-2.1";' export 'METPLUS_PATH;' MET_ROOT='"/usrx/local/dev/packages/met/8.1/";' export 'MET_ROOT;' METversion='"V8.1";' export 'METversion;' MKLROOT='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl";' export 'MKLROOT;' MODULEPATH='"/usrx/local/dev/modulefiles/compiler_third/ips/18.0.1:/gpfs/dell1/nco/ops/nwprod/modulefiles/compiler_prod/ips/18.0.1:/usrx/local/dev/modulefiles:/usrx/local/prod/lmod/lmod/modulefiles/Core:/usrx/local/prod/modulefiles/core_third:/usrx/local/prod/modulefiles/defs:/gpfs/dell1/nco/ops/nwprod/modulefiles/core_prod:/u/Benjamin.Blake/modulefiles:/usrx/local/prod/modulefiles/compiler_third/ips/18.0.1:/usrx/local/prod/modulefiles/compiler_mpi/ips/18.0.1";' export 'MODULEPATH;' MPM_LAUNCHER='"/usrx/local/prod/intel/2018UP01/debugger_2018/mpm/mic/bin/start_mpm.sh";' export 'MPM_LAUNCHER;' NCO_INCLUDE='"-I/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/include";' export 'NCO_INCLUDE;' NCO_LDFLAGS_C='"-L/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/lib";' export 'NCO_LDFLAGS_C;' NCO_LDFLAGS_CXX='"-L/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/lib";' export 'NCO_LDFLAGS_CXX;' __LMOD_REF_COUNT_NLSPATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin/locale/%l_%t/%N:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:1;/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/share/locale/%l_%t/%N:1";' export '__LMOD_REF_COUNT_NLSPATH;' NLSPATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin/locale/%l_%t/%N:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin/locale/%l_%t/%N::/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/share/locale/%l_%t/%N";' export 'NLSPATH;' __LMOD_REF_COUNT_PATH='"/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:1;/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/bin:1;/usrx/local/prod/intel/2018UP01/advisor_2018/bin64:1;/usrx/local/prod/intel/2018UP01/vtune_amplifier_2018/bin64:1;/usrx/local/prod/intel/2018UP01/inspector_2018/bin64:1;/usrx/local/prod/intel/2018UP01/itac_latest/bin:1;/usrx/local/prod/intel/2018UP01/clck_latest/bin/intel64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/bin/intel64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/bin64:1;/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin:1;/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin:1;/usrx/local/dev/packages/met/8.1/bin:1;/usrx/local/dev/packages/met/8.1/external_libs/bin:1;/usrx/local/prod/packages/python/2.7.14/bin:1;/usrx/local/dev/packages/python/2.7.14/bin:1;/usr/lib64/qt-3.3/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/usr/lpp/mmfs/bin:1;/opt/ibutils/bin:1;/opt/dell/srvadmin/bin:1;/u/Ying.Lin/.local/bin:1;/u/Ying.Lin/bin:1;.:1";' export '__LMOD_REF_COUNT_PATH;' PATH='"/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/bin:/usrx/local/prod/intel/2018UP01/advisor_2018/bin64:/usrx/local/prod/intel/2018UP01/vtune_amplifier_2018/bin64:/usrx/local/prod/intel/2018UP01/inspector_2018/bin64:/usrx/local/prod/intel/2018UP01/itac_latest/bin:/usrx/local/prod/intel/2018UP01/clck_latest/bin/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/bin/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/bin64:/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin:/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin:/usrx/local/dev/packages/met/8.1/bin:/usrx/local/dev/packages/met/8.1/external_libs/bin:/usrx/local/prod/packages/python/2.7.14/bin:/usrx/local/dev/packages/python/2.7.14/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin:/opt/ibutils/bin:/opt/dell/srvadmin/bin:/u/Ying.Lin/.local/bin:/u/Ying.Lin/bin:.";' export 'PATH;' PKG_CONFIG_PATH='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/bin/pkgconfig";' export 'PKG_CONFIG_PATH;' PSTLROOT='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/pstl";' export 'PSTLROOT;' __LMOD_REF_COUNT_PYTHONPATH='"/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:1;/usrx/local/dev/packages/met/METplus/METplus-2.1/parm:1;/usrx/local/prod/intel/2018UP01/advisor_2018/pythonapi:1";' export '__LMOD_REF_COUNT_PYTHONPATH;' PYTHONPATH='"/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:/usrx/local/dev/packages/met/METplus/METplus-2.1/parm:/usrx/local/prod/intel/2018UP01/advisor_2018/pythonapi";' export 'PYTHONPATH;' TBBROOT='"/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb";' export 'TBBROOT;' TOCGRIB='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/tocgrib";' export 'TOCGRIB;' TOCGRIB2='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/tocgrib2";' export 'TOCGRIB2;' TOCGRIB2SUPER='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/tocgrib2super";' export 'TOCGRIB2SUPER;' VT_ADD_LIBS='"-ldwarf' -lelf -lvtunwind -lm '-lpthread";' export 'VT_ADD_LIBS;' VT_ARCH='"intel64";' export 'VT_ARCH;' VT_LIB_DIR='"/usrx/local/prod/intel/2018UP01/itac_latest/lib";' export 'VT_LIB_DIR;' VT_MPI='"impi4";' export 'VT_MPI;' VT_ROOT='"/usrx/local/prod/intel/2018UP01/itac_latest";' export 'VT_ROOT;' VT_SLIB_DIR='"/usrx/local/prod/intel/2018UP01/itac_latest/slib";' export 'VT_SLIB_DIR;' WGRIB='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/wgrib";' export 'WGRIB;' WGRIB2='"/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/wgrib2";' export 'WGRIB2;' __LMOD_REF_COUNT__LMFILES_='"/usrx/local/dev/modulefiles/python/2.7.14:1;/usrx/local/dev/modulefiles/met/8.1:1;/usrx/local/prod/modulefiles/core_third/ips/18.0.1.163:1;/gpfs/dell1/nco/ops/nwprod/modulefiles/compiler_prod/ips/18.0.1/grib_util/1.0.6:1;/usrx/local/dev/modulefiles/compiler_third/ips/18.0.1/NCO/4.7.0:1;/usrx/local/dev/modulefiles/metplus/2.1:1";' export '__LMOD_REF_COUNT__LMFILES_;' _LMFILES_='"/usrx/local/dev/modulefiles/python/2.7.14:/usrx/local/dev/modulefiles/met/8.1:/usrx/local/prod/modulefiles/core_third/ips/18.0.1.163:/gpfs/dell1/nco/ops/nwprod/modulefiles/compiler_prod/ips/18.0.1/grib_util/1.0.6:/usrx/local/dev/modulefiles/compiler_third/ips/18.0.1/NCO/4.7.0:/usrx/local/dev/modulefiles/metplus/2.1";' export '_LMFILES_;' _ModuleTable001_='"X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPTcyMDAsWyJjX3Nob3J0VGltZSJdPTEuMDIxNTAyOTcxNjQ5MixkZXB0aFQ9e30sZmFtaWx5PXtbImNvbXBpbGVyIl09ImlwcyIsfSxtVD17TkNPPXtbImZuIl09Ii91c3J4L2xvY2FsL2Rldi9tb2R1bGVmaWxlcy9jb21waWxlcl90aGlyZC9pcHMvMTguMC4xL05DTy80LjcuMCIsWyJmdWxsTmFtZSJdPSJOQ08vNC43LjAiLFsibG9hZE9yZGVyIl09NSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0xLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJOQ08vNC43LjAiLH0sZ3JpYl91dGlsPXtbImZuIl09Ii9ncGZzL2RlbGwxL25jby9vcHMvbndwcm9kL21vZHVsZWZpbGVzL2NvbXBp";' export '_ModuleTable001_;' _ModuleTable002_='"bGVyX3Byb2QvaXBzLzE4LjAuMS9ncmliX3V0aWwvMS4wLjYiLFsiZnVsbE5hbWUiXT0iZ3JpYl91dGlsLzEuMC42IixbImxvYWRPcmRlciJdPTQscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iZ3JpYl91dGlsLzEuMC42Iix9LGlwcz17WyJmbiJdPSIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQvaXBzLzE4LjAuMS4xNjMiLFsiZnVsbE5hbWUiXT0iaXBzLzE4LjAuMS4xNjMiLFsibG9hZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0xLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJpcHMvMTguMC4xLjE2MyIsfSxtZXQ9e1siZm4iXT0iL3VzcngvbG9jYWwvZGV2";' export '_ModuleTable002_;' _ModuleTable003_='"L21vZHVsZWZpbGVzL21ldC84LjEiLFsiZnVsbE5hbWUiXT0ibWV0LzguMSIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTEsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im1ldC84LjEiLH0sbWV0cGx1cz17WyJmbiJdPSIvdXNyeC9sb2NhbC9kZXYvbW9kdWxlZmlsZXMvbWV0cGx1cy8yLjEiLFsiZnVsbE5hbWUiXT0ibWV0cGx1cy8yLjEiLFsibG9hZE9yZGVyIl09Nixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJtZXRwbHVzLzIuMSIsfSxweXRob249e1siZm4iXT0iL3VzcngvbG9jYWwvZGV2L21vZHVsZWZpbGVzL3B5dGhvbi8yLjcuMTQiLFsiZnVsbE5hbWUiXT0icHl0";' export '_ModuleTable003_;' _ModuleTable004_='"aG9uLzIuNy4xNCIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTIsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09InB5dGhvbi8yLjcuMTQiLH0sfSxtcGF0aEE9eyIvdXNyeC9sb2NhbC9kZXYvbW9kdWxlZmlsZXMvY29tcGlsZXJfdGhpcmQvaXBzLzE4LjAuMSIsIi9ncGZzL2RlbGwxL25jby9vcHMvbndwcm9kL21vZHVsZWZpbGVzL2NvbXBpbGVyX3Byb2QvaXBzLzE4LjAuMSIsIi91c3J4L2xvY2FsL2Rldi9tb2R1bGVmaWxlcyIsIi91c3J4L2xvY2FsL3Byb2QvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVz";' export '_ModuleTable004_;' _ModuleTable005_='"L2RlZnMiLCIvZ3Bmcy9kZWxsMS9uY28vb3BzL253cHJvZC9tb2R1bGVmaWxlcy9jb3JlX3Byb2QiLCIvdS9CZW5qYW1pbi5CbGFrZS9tb2R1bGVmaWxlcyIsIi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29tcGlsZXJfdGhpcmQvaXBzLzE4LjAuMSIsIi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29tcGlsZXJfbXBpL2lwcy8xOC4wLjEiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL3VzcngvbG9jYWwvcHJvZC9sbW9kL2xtb2QvbW9kdWxlZmlsZXMvQ29yZTovdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQ6L3VzcngvbG9jYWwvcHJvZC9tb2R1bGVmaWxlcy9kZWZzOi9ncGZzL2RlbGwxL25jby9vcHMvbndwcm9kL21vZHVsZWZpbGVzL2Nv";' export '_ModuleTable005_;' _ModuleTable006_='"cmVfcHJvZCIsfQ==";' export '_ModuleTable006_;' _ModuleTable_Sz_='"6";' export '_ModuleTable_Sz_;'
++ ADVISOR_2018_DIR=/usrx/local/prod/intel/2018UP01/advisor_2018
++ export ADVISOR_2018_DIR
++ __LMOD_REF_COUNT_CLASSPATH='/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64/mpi.jar:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/daal.jar:1'
++ export __LMOD_REF_COUNT_CLASSPATH
++ CLASSPATH=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64/mpi.jar:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/daal.jar
++ export CLASSPATH
++ CLCK_ROOT=/usrx/local/prod/intel/2018UP01/clck_latest
++ export CLCK_ROOT
++ CNVGRIB=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/cnvgrib
++ export CNVGRIB
++ CNVGRIB21_GFS=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/cnvgrib21_gfs
++ export CNVGRIB21_GFS
++ COPYGB=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/copygb
++ export COPYGB
++ COPYGB2=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/copygb2
++ export COPYGB2
++ __LMOD_REF_COUNT_CPATH='/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/pstl/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/include:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/include:1'
++ export __LMOD_REF_COUNT_CPATH
++ CPATH=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/pstl/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/include:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/include
++ export CPATH
++ __LMOD_REF_COUNT_CPLUS_INCLUDE_PATH=/usrx/local/prod/intel/2018UP01/clck_latest/include:1
++ export __LMOD_REF_COUNT_CPLUS_INCLUDE_PATH
++ CPLUS_INCLUDE_PATH=/usrx/local/prod/intel/2018UP01/clck_latest/include
++ export CPLUS_INCLUDE_PATH
++ DAALROOT=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal
++ export DAALROOT
++ DEGRIB2=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/degrib2
++ export DEGRIB2
++ GDBSERVER_MIC=/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin/gdbserver
++ export GDBSERVER_MIC
++ GDB_CROSS=/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin/gdb-ia
++ export GDB_CROSS
++ GRB2INDEX=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/grb2index
++ export GRB2INDEX
++ GRBINDEX=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/grbindex
++ export GRBINDEX
++ GRIB2GRIB=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/grib2grib
++ export GRIB2GRIB
++ __LMOD_REF_COUNT_INFOPATH='/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/info:1;info_gdb_igfx:1'
++ export __LMOD_REF_COUNT_INFOPATH
++ INFOPATH=/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/info:info_gdb_igfx
++ export INFOPATH
++ INSPECTOR_2018_DIR=/usrx/local/prod/intel/2018UP01/inspector_2018
++ export INSPECTOR_2018_DIR
++ INTEL_LICENSE_FILE=/usrx/local/prod/intel/licenses
++ export INTEL_LICENSE_FILE
++ INTEL_PYTHONHOME=/usrx/local/prod/intel/2018UP01/debugger_2018/python/intel64
++ export INTEL_PYTHONHOME
++ IPPROOT=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp
++ export IPPROOT
++ I_MPI_HYDRA_IFACE=ib0
++ export I_MPI_HYDRA_IFACE
++ I_MPI_ROOT=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi
++ export I_MPI_ROOT
++ __LMOD_REF_COUNT_LD_LIBRARY_PATH='/usrx/local/prod/intel/2018UP01/itac_latest/slib:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:1;/usrx/local/prod/intel/2018UP01/debugger_2018/iga/lib:1;/usrx/local/prod/intel/2018UP01/debugger_2018/libipt/intel64/lib:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4:1;/usrx/local/dev/packages/met/8.1/external_libs/lib:1;/usrx/local/prod/packages/python/2.7.14/lib:1;/usrx/local/dev/packages/python/2.7.14/lib:1'
++ export __LMOD_REF_COUNT_LD_LIBRARY_PATH
++ LD_LIBRARY_PATH=/usrx/local/prod/intel/2018UP01/itac_latest/slib:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/lib64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:/usrx/local/prod/intel/2018UP01/debugger_2018/iga/lib:/usrx/local/prod/intel/2018UP01/debugger_2018/libipt/intel64/lib:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4:/usrx/local/dev/packages/met/8.1/external_libs/lib:/usrx/local/prod/packages/python/2.7.14/lib:/usrx/local/dev/packages/python/2.7.14/lib
++ export LD_LIBRARY_PATH
++ __LMOD_REF_COUNT_LIBRARY_PATH='/usrx/local/prod/intel/2018UP01/clck_latest/lib/intel64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4:1'
++ export __LMOD_REF_COUNT_LIBRARY_PATH
++ LIBRARY_PATH=/usrx/local/prod/intel/2018UP01/clck_latest/lib/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/ipp/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.7:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/daal/lib/intel64_lin:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb/lib/intel64_lin/gcc4.4
++ export LIBRARY_PATH
++ LMOD_FAMILY_COMPILER=ips
++ export LMOD_FAMILY_COMPILER
++ LMOD_FAMILY_COMPILER_VERSION=18.0.1.163
++ export LMOD_FAMILY_COMPILER_VERSION
++ __LMOD_REF_COUNT_LOADEDMODULES='python/2.7.14:1;met/8.1:1;ips/18.0.1.163:1;grib_util/1.0.6:1;NCO/4.7.0:1;metplus/2.1:1'
++ export __LMOD_REF_COUNT_LOADEDMODULES
++ LOADEDMODULES=python/2.7.14:met/8.1:ips/18.0.1.163:grib_util/1.0.6:NCO/4.7.0:metplus/2.1
++ export LOADEDMODULES
++ __LMOD_REF_COUNT_MANPATH='/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/share/man:1;/usrx/local/prod/intel/2018UP01/itac_latest/man:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/man/common:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/man:1;/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/man:1;/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-igfx/man:1;/usrx/local/dev/packages/python/2.7.14/share/man:1;/usrx/local/prod/lmod/lmod/share/man:1;/usrx/local/prod/intel/2018UP01/inspector_2018/man:1;/usrx/local/prod/intel/2018UP01/advisor_2018/man:1'
++ export __LMOD_REF_COUNT_MANPATH
++ MANPATH=/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/share/man:/usrx/local/prod/intel/2018UP01/itac_latest/man:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/man/common:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/man:/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-ia/man:/usrx/local/prod/intel/2018UP01/documentation_2018/en/debugger/gdb-igfx/man:/usrx/local/dev/packages/python/2.7.14/share/man:/usrx/local/prod/lmod/lmod/share/man::/usrx/local/prod/intel/2018UP01/inspector_2018/man:/usrx/local/prod/intel/2018UP01/advisor_2018/man
++ export MANPATH
++ METPLUS_PATH=/usrx/local/dev/packages/met/METplus/METplus-2.1
++ export METPLUS_PATH
++ MET_ROOT=/usrx/local/dev/packages/met/8.1/
++ export MET_ROOT
++ METversion=V8.1
++ export METversion
++ MKLROOT=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl
++ export MKLROOT
++ MODULEPATH=/usrx/local/dev/modulefiles/compiler_third/ips/18.0.1:/gpfs/dell1/nco/ops/nwprod/modulefiles/compiler_prod/ips/18.0.1:/usrx/local/dev/modulefiles:/usrx/local/prod/lmod/lmod/modulefiles/Core:/usrx/local/prod/modulefiles/core_third:/usrx/local/prod/modulefiles/defs:/gpfs/dell1/nco/ops/nwprod/modulefiles/core_prod:/u/Benjamin.Blake/modulefiles:/usrx/local/prod/modulefiles/compiler_third/ips/18.0.1:/usrx/local/prod/modulefiles/compiler_mpi/ips/18.0.1
++ export MODULEPATH
++ MPM_LAUNCHER=/usrx/local/prod/intel/2018UP01/debugger_2018/mpm/mic/bin/start_mpm.sh
++ export MPM_LAUNCHER
++ NCO_INCLUDE=-I/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/include
++ export NCO_INCLUDE
++ NCO_LDFLAGS_C=-L/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/lib
++ export NCO_LDFLAGS_C
++ NCO_LDFLAGS_CXX=-L/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/lib
++ export NCO_LDFLAGS_CXX
++ __LMOD_REF_COUNT_NLSPATH='/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin/locale/%l_%t/%N:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin/locale/%l_%t/%N:1;/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/share/locale/%l_%t/%N:1'
++ export __LMOD_REF_COUNT_NLSPATH
++ NLSPATH=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/lib/intel64_lin/locale/%l_%t/%N:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/lib/intel64_lin/locale/%l_%t/%N::/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/share/locale/%l_%t/%N
++ export NLSPATH
++ __LMOD_REF_COUNT_PATH='/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:1;/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/bin:1;/usrx/local/prod/intel/2018UP01/advisor_2018/bin64:1;/usrx/local/prod/intel/2018UP01/vtune_amplifier_2018/bin64:1;/usrx/local/prod/intel/2018UP01/inspector_2018/bin64:1;/usrx/local/prod/intel/2018UP01/itac_latest/bin:1;/usrx/local/prod/intel/2018UP01/clck_latest/bin/intel64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/bin/intel64:1;/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/bin64:1;/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin:1;/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin:1;/usrx/local/dev/packages/met/8.1/bin:1;/usrx/local/dev/packages/met/8.1/external_libs/bin:1;/usrx/local/prod/packages/python/2.7.14/bin:1;/usrx/local/dev/packages/python/2.7.14/bin:1;/usr/lib64/qt-3.3/bin:1;/usr/local/bin:1;/usr/bin:1;/usr/local/sbin:1;/usr/sbin:1;/usr/lpp/mmfs/bin:1;/opt/ibutils/bin:1;/opt/dell/srvadmin/bin:1;/u/Ying.Lin/.local/bin:1;/u/Ying.Lin/bin:1;.:1'
++ export __LMOD_REF_COUNT_PATH
++ PATH=/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/bin:/usrx/local/prod/intel/2018UP01/advisor_2018/bin64:/usrx/local/prod/intel/2018UP01/vtune_amplifier_2018/bin64:/usrx/local/prod/intel/2018UP01/inspector_2018/bin64:/usrx/local/prod/intel/2018UP01/itac_latest/bin:/usrx/local/prod/intel/2018UP01/clck_latest/bin/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/bin/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/bin64:/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin:/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin:/usrx/local/dev/packages/met/8.1/bin:/usrx/local/dev/packages/met/8.1/external_libs/bin:/usrx/local/prod/packages/python/2.7.14/bin:/usrx/local/dev/packages/python/2.7.14/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin:/opt/ibutils/bin:/opt/dell/srvadmin/bin:/u/Ying.Lin/.local/bin:/u/Ying.Lin/bin:.
++ export PATH
++ PKG_CONFIG_PATH=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mkl/bin/pkgconfig
++ export PKG_CONFIG_PATH
++ PSTLROOT=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/pstl
++ export PSTLROOT
++ __LMOD_REF_COUNT_PYTHONPATH='/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:1;/usrx/local/dev/packages/met/METplus/METplus-2.1/parm:1;/usrx/local/prod/intel/2018UP01/advisor_2018/pythonapi:1'
++ export __LMOD_REF_COUNT_PYTHONPATH
++ PYTHONPATH=/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:/usrx/local/dev/packages/met/METplus/METplus-2.1/parm:/usrx/local/prod/intel/2018UP01/advisor_2018/pythonapi
++ export PYTHONPATH
++ TBBROOT=/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/tbb
++ export TBBROOT
++ TOCGRIB=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/tocgrib
++ export TOCGRIB
++ TOCGRIB2=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/tocgrib2
++ export TOCGRIB2
++ TOCGRIB2SUPER=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/tocgrib2super
++ export TOCGRIB2SUPER
++ VT_ADD_LIBS='-ldwarf -lelf -lvtunwind -lm -lpthread'
++ export VT_ADD_LIBS
++ VT_ARCH=intel64
++ export VT_ARCH
++ VT_LIB_DIR=/usrx/local/prod/intel/2018UP01/itac_latest/lib
++ export VT_LIB_DIR
++ VT_MPI=impi4
++ export VT_MPI
++ VT_ROOT=/usrx/local/prod/intel/2018UP01/itac_latest
++ export VT_ROOT
++ VT_SLIB_DIR=/usrx/local/prod/intel/2018UP01/itac_latest/slib
++ export VT_SLIB_DIR
++ WGRIB=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/wgrib
++ export WGRIB
++ WGRIB2=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.0.6/exec/wgrib2
++ export WGRIB2
++ __LMOD_REF_COUNT__LMFILES_='/usrx/local/dev/modulefiles/python/2.7.14:1;/usrx/local/dev/modulefiles/met/8.1:1;/usrx/local/prod/modulefiles/core_third/ips/18.0.1.163:1;/gpfs/dell1/nco/ops/nwprod/modulefiles/compiler_prod/ips/18.0.1/grib_util/1.0.6:1;/usrx/local/dev/modulefiles/compiler_third/ips/18.0.1/NCO/4.7.0:1;/usrx/local/dev/modulefiles/metplus/2.1:1'
++ export __LMOD_REF_COUNT__LMFILES_
++ _LMFILES_=/usrx/local/dev/modulefiles/python/2.7.14:/usrx/local/dev/modulefiles/met/8.1:/usrx/local/prod/modulefiles/core_third/ips/18.0.1.163:/gpfs/dell1/nco/ops/nwprod/modulefiles/compiler_prod/ips/18.0.1/grib_util/1.0.6:/usrx/local/dev/modulefiles/compiler_third/ips/18.0.1/NCO/4.7.0:/usrx/local/dev/modulefiles/metplus/2.1
++ export _LMFILES_
++ _ModuleTable001_=X01vZHVsZVRhYmxlXz17WyJNVHZlcnNpb24iXT0zLFsiY19yZWJ1aWxkVGltZSJdPTcyMDAsWyJjX3Nob3J0VGltZSJdPTEuMDIxNTAyOTcxNjQ5MixkZXB0aFQ9e30sZmFtaWx5PXtbImNvbXBpbGVyIl09ImlwcyIsfSxtVD17TkNPPXtbImZuIl09Ii91c3J4L2xvY2FsL2Rldi9tb2R1bGVmaWxlcy9jb21waWxlcl90aGlyZC9pcHMvMTguMC4xL05DTy80LjcuMCIsWyJmdWxsTmFtZSJdPSJOQ08vNC43LjAiLFsibG9hZE9yZGVyIl09NSxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0xLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJOQ08vNC43LjAiLH0sZ3JpYl91dGlsPXtbImZuIl09Ii9ncGZzL2RlbGwxL25jby9vcHMvbndwcm9kL21vZHVsZWZpbGVzL2NvbXBp
++ export _ModuleTable001_
++ _ModuleTable002_=bGVyX3Byb2QvaXBzLzE4LjAuMS9ncmliX3V0aWwvMS4wLjYiLFsiZnVsbE5hbWUiXT0iZ3JpYl91dGlsLzEuMC42IixbImxvYWRPcmRlciJdPTQscHJvcFQ9e30sWyJzdGFja0RlcHRoIl09MSxbInN0YXR1cyJdPSJhY3RpdmUiLFsidXNlck5hbWUiXT0iZ3JpYl91dGlsLzEuMC42Iix9LGlwcz17WyJmbiJdPSIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQvaXBzLzE4LjAuMS4xNjMiLFsiZnVsbE5hbWUiXT0iaXBzLzE4LjAuMS4xNjMiLFsibG9hZE9yZGVyIl09Myxwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0xLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJpcHMvMTguMC4xLjE2MyIsfSxtZXQ9e1siZm4iXT0iL3VzcngvbG9jYWwvZGV2
++ export _ModuleTable002_
++ _ModuleTable003_=L21vZHVsZWZpbGVzL21ldC84LjEiLFsiZnVsbE5hbWUiXT0ibWV0LzguMSIsWyJsb2FkT3JkZXIiXT0yLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTEsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09Im1ldC84LjEiLH0sbWV0cGx1cz17WyJmbiJdPSIvdXNyeC9sb2NhbC9kZXYvbW9kdWxlZmlsZXMvbWV0cGx1cy8yLjEiLFsiZnVsbE5hbWUiXT0ibWV0cGx1cy8yLjEiLFsibG9hZE9yZGVyIl09Nixwcm9wVD17fSxbInN0YWNrRGVwdGgiXT0wLFsic3RhdHVzIl09ImFjdGl2ZSIsWyJ1c2VyTmFtZSJdPSJtZXRwbHVzLzIuMSIsfSxweXRob249e1siZm4iXT0iL3VzcngvbG9jYWwvZGV2L21vZHVsZWZpbGVzL3B5dGhvbi8yLjcuMTQiLFsiZnVsbE5hbWUiXT0icHl0
++ export _ModuleTable003_
++ _ModuleTable004_=aG9uLzIuNy4xNCIsWyJsb2FkT3JkZXIiXT0xLHByb3BUPXt9LFsic3RhY2tEZXB0aCJdPTIsWyJzdGF0dXMiXT0iYWN0aXZlIixbInVzZXJOYW1lIl09InB5dGhvbi8yLjcuMTQiLH0sfSxtcGF0aEE9eyIvdXNyeC9sb2NhbC9kZXYvbW9kdWxlZmlsZXMvY29tcGlsZXJfdGhpcmQvaXBzLzE4LjAuMSIsIi9ncGZzL2RlbGwxL25jby9vcHMvbndwcm9kL21vZHVsZWZpbGVzL2NvbXBpbGVyX3Byb2QvaXBzLzE4LjAuMSIsIi91c3J4L2xvY2FsL2Rldi9tb2R1bGVmaWxlcyIsIi91c3J4L2xvY2FsL3Byb2QvbG1vZC9sbW9kL21vZHVsZWZpbGVzL0NvcmUiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQiLCIvdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVz
++ export _ModuleTable004_
++ _ModuleTable005_=L2RlZnMiLCIvZ3Bmcy9kZWxsMS9uY28vb3BzL253cHJvZC9tb2R1bGVmaWxlcy9jb3JlX3Byb2QiLCIvdS9CZW5qYW1pbi5CbGFrZS9tb2R1bGVmaWxlcyIsIi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29tcGlsZXJfdGhpcmQvaXBzLzE4LjAuMSIsIi91c3J4L2xvY2FsL3Byb2QvbW9kdWxlZmlsZXMvY29tcGlsZXJfbXBpL2lwcy8xOC4wLjEiLH0sWyJzeXN0ZW1CYXNlTVBBVEgiXT0iL3VzcngvbG9jYWwvcHJvZC9sbW9kL2xtb2QvbW9kdWxlZmlsZXMvQ29yZTovdXNyeC9sb2NhbC9wcm9kL21vZHVsZWZpbGVzL2NvcmVfdGhpcmQ6L3VzcngvbG9jYWwvcHJvZC9tb2R1bGVmaWxlcy9kZWZzOi9ncGZzL2RlbGwxL25jby9vcHMvbndwcm9kL21vZHVsZWZpbGVzL2Nv
++ export _ModuleTable005_
++ _ModuleTable006_=cmVfcHJvZCIsfQ==''
++ export _ModuleTable006_
++ _ModuleTable_Sz_=6
++ export _ModuleTable_Sz_
++ METPLUS_PATH=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus
++ export METPLUS_PATH
++ MET_PATH=/gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1
++ export MET_PATH
++ JLOGFILE=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/logs/metplus_jlogfile
++ export JLOGFILE
++ PYTHONPATH=/ush:/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/parm
++ export PYTHONPATH
++ PATH=/usrx/local/dev/packages/met/METplus/METplus-2.1/ush:/usrx/local/dev/packages/ips/18.0.1/nco/4.7.0/bin:/usrx/local/prod/intel/2018UP01/advisor_2018/bin64:/usrx/local/prod/intel/2018UP01/vtune_amplifier_2018/bin64:/usrx/local/prod/intel/2018UP01/inspector_2018/bin64:/usrx/local/prod/intel/2018UP01/itac_latest/bin:/usrx/local/prod/intel/2018UP01/clck_latest/bin/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/bin/intel64:/usrx/local/prod/intel/2018UP01/compilers_and_libraries/linux/mpi/bin64:/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/targets/intel64/x200/bin:/usrx/local/prod/intel/2018UP01/debugger_2018/gdb/intel64/bin:/usrx/local/dev/packages/met/8.1/bin:/usrx/local/dev/packages/met/8.1/external_libs/bin:/usrx/local/prod/packages/python/2.7.14/bin:/usrx/local/dev/packages/python/2.7.14/bin:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/usr/lpp/mmfs/bin:/opt/ibutils/bin:/opt/dell/srvadmin/bin:/u/Ying.Lin/.local/bin:/u/Ying.Lin/bin:.:/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/ush:.
++ export PATH
++ vday=20190720
++ export vday
++ echo 'Actual output starts here:'
+Actual output starts here:
++ master_metplus.py -c /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/parm/models/gfs_24h.conf -c /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/parm/system.conf.dell
+07/26 15:29:57.347 master_metplus (master_metplus.py:64) INFO: Starting METplus v2.1
+07/26 15:29:57.347 metplus (config_metplus.py:73) INFO: Starting METplus configuration setup.
+07/26 15:29:57.384 metplus (config_launcher.py:214) INFO: /gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/metplus_config/metplus_system.conf: Parsed this file
+07/26 15:29:57.417 metplus (config_launcher.py:214) INFO: /gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/metplus_config/metplus_data.conf: Parsed this file
+07/26 15:29:57.423 metplus (config_launcher.py:214) INFO: /gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/metplus_config/metplus_runtime.conf: Parsed this file
+07/26 15:29:57.461 metplus (config_launcher.py:214) INFO: /gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/metplus_config/metplus_logging.conf: Parsed this file
+07/26 15:29:57.462 metplus (config_launcher.py:214) INFO: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/parm/models/gfs_24h.conf: Parsed this file
+07/26 15:29:57.463 metplus (config_launcher.py:214) INFO: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/parm/system.conf.dell: Parsed this file
+07/26 15:29:57.464 metplus (met_util.py:523) INFO: Adding: config.LOG_TIMESTAMP='20190726'
+07/26 15:29:57.464 metplus (met_util.py:529) INFO: Replace [config] LOG_METPLUS with '/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726'
+07/26 15:29:57.464 metplus (config_launcher.py:284) WARNING: METPLUS_BASE from the conf files has no effect. Overriding to /gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1
+07/26 15:29:57.464 metplus (config_launcher.py:297) INFO: Replace [dir] OUTPUT_BASE with /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out
+07/26 15:29:57.465 metplus (config_launcher.py:297) INFO: Replace [dir] METPLUS_BASE with /gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1
+07/26 15:29:57.465 metplus (config_launcher.py:307) INFO: METPLUS_CONF: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/metplus_final.conf written here.
+07/26 15:29:57.466 metplus (config_metplus.py:136) INFO: Completed METplus configuration setup.
+07/26 15:29:57.468 metplus (master_metplus.py:79) INFO: Running METplus v2.1 called with command: /usrx/local/dev/packages/met/METplus/METplus-2.1/ush/master_metplus.py -c /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/parm/models/gfs_24h.conf -c /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/parm/system.conf.dell
+07/26 15:29:57.470 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] PCP_COMBINE_SKIP_IF_OUTPUT_EXISTS to default value: False.
+07/26 15:29:57.470 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_MIN_FORECAST to default value: 0.
+07/26 15:29:57.470 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_MAX_FORECAST to default value: 256.
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_DATA_INTERVAL to default value: 1.
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_TIMES_PER_FILE to default value: -1.
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_IS_DAILY_FILE to default value: False.
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_INPUT_LEVEL to default value: -1.
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_STAT_LIST to default value: .
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] FCST_PCP_COMBINE_DERIVE_LOOKBACK to default value: 0.
+07/26 15:29:57.471 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] OBS_PCP_COMBINE_MIN_FORECAST to default value: 0.
+07/26 15:29:57.472 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] OBS_PCP_COMBINE_MAX_FORECAST to default value: 256.
+07/26 15:29:57.472 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] OBS_PCP_COMBINE_DATA_INTERVAL to default value: 1.
+07/26 15:29:57.472 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] OBS_PCP_COMBINE_TIMES_PER_FILE to default value: -1.
+07/26 15:29:57.472 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] OBS_PCP_COMBINE_STAT_LIST to default value: .
+07/26 15:29:57.472 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] OBS_PCP_COMBINE_DERIVE_LOOKBACK to default value: 0.
+07/26 15:29:57.473 metplus.RegridDataPlane (config_wrapper.py:102) DEBUG: Setting [config] REGRID_DATA_PLANE_SKIP_IF_OUTPUT_EXISTS to default value: False.
+07/26 15:29:57.473 metplus.RegridDataPlane (config_wrapper.py:102) DEBUG: Setting [config] FCST_REGRID_DATA_PLANE_RUN to default value: False.
+07/26 15:29:57.473 metplus.RegridDataPlane (config_wrapper.py:102) DEBUG: Setting [config] REGRID_DATA_PLANE_METHOD to default value: .
+07/26 15:29:57.473 metplus.RegridDataPlane (config_wrapper.py:102) DEBUG: Setting [config] REGRID_DATA_PLANE_WIDTH to default value: 1.
+07/26 15:29:57.474 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_IS_PROB to default value: False.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] FCST_WINDOW_BEGIN to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] FCST_WINDOW_END to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_WINDOW_BEGIN to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_WINDOW_END to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] FCST_FILE_WINDOW_BEGIN to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] FCST_FILE_WINDOW_END to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_FILE_WINDOW_BEGIN to default value: 0.
+07/26 15:29:57.475 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_FILE_WINDOW_END to default value: 0.
+07/26 15:29:57.493 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] GRID_STAT_CONFIG_FILE to default value: .
+07/26 15:29:57.493 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_GRID_STAT_INPUT_DATATYPE to default value: .
+07/26 15:29:57.493 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] FCST_GRID_STAT_INPUT_DATATYPE to default value: .
+07/26 15:29:57.494 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] GRID_STAT_ONCE_PER_FIELD to default value: False.
+07/26 15:29:57.494 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] FCST_GRID_STAT_PROB_THRESH to default value: ==0.1.
+07/26 15:29:57.494 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] OBS_GRID_STAT_PROB_THRESH to default value: ==0.1.
+07/26 15:29:57.494 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] GRID_STAT_NEIGHBORHOOD_WIDTH to default value: .
+07/26 15:29:57.494 metplus.GridStat (config_wrapper.py:102) DEBUG: Setting [config] GRID_STAT_NEIGHBORHOOD_SHAPE to default value: .
+07/26 15:29:57.498 metplus (met_util.py:234) INFO: ****************************************
+07/26 15:29:57.498 metplus (met_util.py:235) INFO: * Running METplus
+07/26 15:29:57.498 metplus (met_util.py:241) INFO: *  at valid time: 201907201200
+07/26 15:29:57.498 metplus (met_util.py:244) INFO: ****************************************
+07/26 15:29:57.499 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] LEAD_SEQ_MIN to default value: 24.
+07/26 15:29:57.499 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] LEAD_SEQ_MAX to default value: 48.
+07/26 15:29:57.499 metplus.PcpCombine (reformat_gridded_wrapper.py:71) INFO: Processing FCST data
+07/26 15:29:57.499 metplus.PcpCombine (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 24
+07/26 15:29:57.510 metplus.PcpCombine (command_runner.py:117) INFO: app_name is: pcp_combine, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:29:58.077 mpi_impl (__init__.py:331) INFO: inside_aprun: not detected: INSIDE_APRUN is not set or is 0
+07/26 15:29:58.165 mpi_impl (__init__.py:331) INFO: lsf_cray_intel: not detected: aprun: cannot find executable
+07/26 15:29:58.166 mpi_impl (__init__.py:331) INFO: mpirun_lsf: not detected: mpirun.lsf: cannot find executable
+07/26 15:29:58.262 mpi_impl (__init__.py:331) INFO: impi: not detected: 'TOTAL_TASKS'
+07/26 15:29:58.262 mpi_impl (__init__.py:331) INFO: mpiexec_mpt: not detected: mpiexec_mpt: cannot find executable
+07/26 15:29:58.263 mpi_impl (__init__.py:331) INFO: srun: not detected: srun: cannot find executable
+07/26 15:29:58.264 mpi_impl (__init__.py:331) INFO: mpiexec: not detected: 'TOTAL_TASKS'
+07/26 15:29:58.264 metplus.PcpCombine (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/pcp_combine -subtract /gpfs/dell1/nco/ops/com/gfs/prod/gfs.20190719/12/gfs.t12z.pgrb2.0p25.f024 24 /gpfs/dell1/nco/ops/com/gfs/prod/gfs.20190719/12/gfs.t12z.pgrb2.0p25.f000 0 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/gfs/bucket/gfs.2019072012_f024_A24h -v 5 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:29:58.265 metplus.PcpCombine (config_wrapper.py:102) DEBUG: Setting [config] DO_NOT_RUN_EXE to default value: False.
+07/26 15:30:00.669 metplus.PcpCombine (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 36
+07/26 15:30:00.674 metplus.PcpCombine (command_runner.py:117) INFO: app_name is: pcp_combine, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:00.674 metplus.PcpCombine (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/pcp_combine -subtract /gpfs/dell1/nco/ops/com/gfs/prod/gfs.20190719/00/gfs.t00z.pgrb2.0p25.f036 36 /gpfs/dell1/nco/ops/com/gfs/prod/gfs.20190719/00/gfs.t00z.pgrb2.0p25.f012 12 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/gfs/bucket/gfs.2019072012_f036_A24h -v 5 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:03.079 metplus.PcpCombine (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 48
+07/26 15:30:03.087 metplus.PcpCombine (pcp_combine_wrapper.py:596) ERROR: Could not find file in /gpfs/dell1/nco/ops/com/gfs/prod for init time 201907181200 and lead 48
+07/26 15:30:03.089 metplus.PcpCombine (pcp_combine_wrapper.py:547) ERROR: pcp_combine could not generate command for init 201907181200 and forecast lead 48
+07/26 15:30:03.089 metplus.PcpCombine (reformat_gridded_wrapper.py:71) INFO: Processing OBS data
+07/26 15:30:03.089 metplus.PcpCombine (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 24
+07/26 15:30:03.141 metplus.PcpCombine (command_runner.py:117) INFO: app_name is: pcp_combine, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:03.141 metplus.PcpCombine (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/pcp_combine -name APCP_24 -add /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/12/ccpa.t12z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/06/ccpa.t06z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/00/ccpa.t00z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190719/18/ccpa.t18z.06h.hrap.conus.gb2 6 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/bucket/20190720/ccpa.2019072012_A24h -v 5 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:05.346 metplus.PcpCombine (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 36
+07/26 15:30:05.356 metplus.PcpCombine (command_runner.py:117) INFO: app_name is: pcp_combine, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:05.356 metplus.PcpCombine (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/pcp_combine -name APCP_24 -add /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/12/ccpa.t12z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/06/ccpa.t06z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/00/ccpa.t00z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190719/18/ccpa.t18z.06h.hrap.conus.gb2 6 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/bucket/20190720/ccpa.2019072012_A24h -v 5 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:07.560 metplus.PcpCombine (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 48
+07/26 15:30:07.570 metplus.PcpCombine (command_runner.py:117) INFO: app_name is: pcp_combine, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:07.570 metplus.PcpCombine (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/pcp_combine -name APCP_24 -add /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/12/ccpa.t12z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/06/ccpa.t06z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190720/00/ccpa.t00z.06h.hrap.conus.gb2 6 /gpfs/tp2/nco/ops/com/ccpa/prod/ccpa.20190719/18/ccpa.t18z.06h.hrap.conus.gb2 6 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/bucket/20190720/ccpa.2019072012_A24h -v 5 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:09.775 metplus.RegridDataPlane (reformat_gridded_wrapper.py:71) INFO: Processing OBS data
+07/26 15:30:09.775 metplus.RegridDataPlane (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 24
+07/26 15:30:09.776 metplus.RegridDataPlane (config_wrapper.py:102) DEBUG: Setting [config] OBS_REGRID_DATA_PLANE_INPUT_DATATYPE to default value: .
+07/26 15:30:09.779 metplus.RegridDataPlane (command_runner.py:117) INFO: app_name is: regrid_data_plane, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:09.779 metplus.RegridDataPlane (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/regrid_data_plane -v 5 -field "name=\"APCP_24\"; level=\"(*,*)\";" -width 1 -name APCP_24 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/bucket/20190720/ccpa.2019072012_A24h /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data/qpf/sample_fcst/2005080700/wrfprs_ruc13_12.tm00_G212 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/regrid/20190720/ccpa.2019072012_A24h.g212 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:10.582 metplus.RegridDataPlane (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 36
+07/26 15:30:10.584 metplus.RegridDataPlane (command_runner.py:117) INFO: app_name is: regrid_data_plane, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:10.584 metplus.RegridDataPlane (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/regrid_data_plane -v 5 -field "name=\"APCP_24\"; level=\"(*,*)\";" -width 1 -name APCP_24 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/bucket/20190720/ccpa.2019072012_A24h /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data/qpf/sample_fcst/2005080700/wrfprs_ruc13_12.tm00_G212 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/regrid/20190720/ccpa.2019072012_A24h.g212 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:11.186 metplus.RegridDataPlane (reformat_gridded_wrapper.py:76) INFO: Processing forecast lead 48
+07/26 15:30:11.190 metplus.RegridDataPlane (command_runner.py:117) INFO: app_name is: regrid_data_plane, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:11.190 metplus.RegridDataPlane (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/regrid_data_plane -v 5 -field "name=\"APCP_24\"; level=\"(*,*)\";" -width 1 -name APCP_24 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/bucket/20190720/ccpa.2019072012_A24h /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data/qpf/sample_fcst/2005080700/wrfprs_ruc13_12.tm00_G212 /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/regrid/20190720/ccpa.2019072012_A24h.g212 >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:11.793 metplus.GridStat (compare_gridded_wrapper.py:147) INFO: Processing forecast lead 24
+07/26 15:30:11.798 metplus.GridStat (compare_gridded_wrapper.py:227) ERROR: Could not find file in /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/gfs/bucket for init time 201907191200 f24
+07/26 15:30:11.804 metplus.GridStat (compare_gridded_wrapper.py:147) INFO: Processing forecast lead 36
+07/26 15:30:11.806 metplus.GridStat (compare_gridded_wrapper.py:380) DEBUG: ENVIRONMENT FOR NEXT COMMAND: 
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: MODEL=GFS
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: FCST_VAR=APCP
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: OBS_VAR=APCP
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: LEVEL=A24
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: OBTYPE=ANLYS
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: CONFIG_DIR=/gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/use_cases/grid_to_grid/met_config
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: FCST_FIELD={ name="APCP_24"; level="(*,*)";   }
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: OBS_FIELD={ name="APCP_24"; level="(*,*)";   }
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: INPUT_BASE=/gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: MET_VALID_HHMM=0720
+07/26 15:30:11.807 metplus.GridStat (command_builder.py:160) DEBUG: FCST_TIME=036
+07/26 15:30:11.807 metplus.GridStat (compare_gridded_wrapper.py:384) DEBUG: COPYABLE ENVIRONMENT FOR NEXT COMMAND: 
+07/26 15:30:11.808 metplus.GridStat (command_builder.py:155) DEBUG: export MODEL="GFS"; export FCST_VAR="APCP"; export OBS_VAR="APCP"; export LEVEL="A24"; export OBTYPE="ANLYS"; export CONFIG_DIR="/gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/use_cases/grid_to_grid/met_config"; export FCST_FIELD="{ name=\"APCP_24\"; level=\"(*,*)\";   }"; export OBS_FIELD="{ name=\"APCP_24\"; level=\"(*,*)\";   }"; export INPUT_BASE="/gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data"; export MET_VALID_HHMM="0720"; export FCST_TIME="036"; 
+07/26 15:30:11.809 metplus.GridStat (command_runner.py:117) INFO: app_name is: grid_stat, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:11.809 metplus.GridStat (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/grid_stat /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/gfs/bucket/gfs.2019072012_f036_A24h /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/regrid/20190720/ccpa.2019072012_A24h.g212 -outdir /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/met_out/GFS/201907201200/grid_stat >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:12.210 metplus.GridStat (compare_gridded_wrapper.py:147) INFO: Processing forecast lead 48
+07/26 15:30:12.213 metplus.GridStat (compare_gridded_wrapper.py:380) DEBUG: ENVIRONMENT FOR NEXT COMMAND: 
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: MODEL=GFS
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: FCST_VAR=APCP
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: OBS_VAR=APCP
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: LEVEL=A24
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: OBTYPE=ANLYS
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: CONFIG_DIR=/gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/use_cases/grid_to_grid/met_config
+07/26 15:30:12.213 metplus.GridStat (command_builder.py:160) DEBUG: FCST_FIELD={ name="APCP_24"; level="(*,*)";   }
+07/26 15:30:12.214 metplus.GridStat (command_builder.py:160) DEBUG: OBS_FIELD={ name="APCP_24"; level="(*,*)";   }
+07/26 15:30:12.214 metplus.GridStat (command_builder.py:160) DEBUG: INPUT_BASE=/gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data
+07/26 15:30:12.214 metplus.GridStat (command_builder.py:160) DEBUG: MET_VALID_HHMM=0720
+07/26 15:30:12.214 metplus.GridStat (command_builder.py:160) DEBUG: FCST_TIME=048
+07/26 15:30:12.214 metplus.GridStat (compare_gridded_wrapper.py:384) DEBUG: COPYABLE ENVIRONMENT FOR NEXT COMMAND: 
+07/26 15:30:12.214 metplus.GridStat (command_builder.py:155) DEBUG: export MODEL="GFS"; export FCST_VAR="APCP"; export OBS_VAR="APCP"; export LEVEL="A24"; export OBTYPE="ANLYS"; export CONFIG_DIR="/gpfs/dell3/usrx/local/dev/packages/met/METplus/METplus-2.1/parm/use_cases/grid_to_grid/met_config"; export FCST_FIELD="{ name=\"APCP_24\"; level=\"(*,*)\";   }"; export OBS_FIELD="{ name=\"APCP_24\"; level=\"(*,*)\";   }"; export INPUT_BASE="/gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data"; export MET_VALID_HHMM="0720"; export FCST_TIME="048"; 
+07/26 15:30:12.215 metplus.GridStat (command_runner.py:117) INFO: app_name is: grid_stat, output sent to: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726
+07/26 15:30:12.215 metplus.GridStat (command_runner.py:153) INFO: RUNNING: /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1/bin/grid_stat /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/gfs/bucket/gfs.2019072012_f048_A24h /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/regrid/20190720/ccpa.2019072012_A24h.g212 -outdir /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/met_out/GFS/201907201200/grid_stat >> /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/logs/master_metplus.log.20190726 2>&1
+07/26 15:30:12.617 metplus (config_wrapper.py:102) DEBUG: Setting [config] SCRUB_STAGING_DIR to default value: False.
+07/26 15:30:12.617 metplus.GridStat (met_util.py:174) INFO: /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/metplus_final.conf: write metplus.conf here
+07/26 15:30:12.619 metplus.GridStat (master_metplus.py:158) INFO: METplus has successfully finished running.
