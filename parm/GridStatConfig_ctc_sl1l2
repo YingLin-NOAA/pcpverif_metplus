@@ -96,7 +96,7 @@ climo_cdf_bins = 1;
 //
 mask = {
    grid = ["FULL"];
-   poly = [];
+   poly = [ "${polydir}/CONUS.nc", "${polydir}/APL.nc", "${polydir}/GMC.nc", "${polydir}/GRB.nc", "${polydir}/LMV.nc", "${polydir}/MDW.nc", "${polydir}/NEC.nc", "${polydir}/NMT.nc", "${polydir}/NPL.nc", "${polydir}/NWC.nc", "${polydir}/SEC.nc", "${polydir}/SMT.nc", "${polydir}/SPL.nc", "${polydir}/SWC.nc", "${polydir}/SWD.nc"];
 }
 
 ////////////////////////////////////////////////////////////////////////////////
