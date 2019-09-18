@@ -25,7 +25,7 @@ desc = "NA";
 // Verification grid
 //
 regrid = {
-   to_grid    = "${REGRID_TO_GRID}";
+   to_grid    = ${REGRID_TO_GRID};
    method     = BILIN;
    width      = 2;
    vld_thresh = 0.5;
@@ -71,16 +71,14 @@ duplicate_flag = NONE;
 obs_summary    = NONE;
 obs_perc_value = 50;
 
-//
-// Mapping of message type group name to comma-separated list of values.
-//
 message_type_group_map = [
    { key = "SURFACE"; val = "ADPSFC,SFCSHP,MSONET";               },
    { key = "ANYAIR";  val = "AIRCAR,AIRCFT";                      },
    { key = "ANYSFC";  val = "ADPSFC,SFCSHP,ADPUPA,PROFLR,MSONET"; },
-   { key = "ONLYSF";  val = "ADPSFC,SFCSHP";                      }
+   { key = "ONLYSF";  val = "ADPSFC,SFCSHP";                      },
+   { key = "LANDSF";  val = "ADPSFC,MSONET";                      },
+   { key = "WATERSF"; val = "SFCSHP";                             }
 ];
-
 ////////////////////////////////////////////////////////////////////////////////
 
 //
@@ -128,8 +126,8 @@ obs_window = {
 // Verification masking regions
 //
 mask = {
-   grid = ${POINT_STAT_GRID};
-   poly = ${POINT_STAT_POLY};
+   grid = ["FULL"]; 
+   poly = [ "${polydir}/ABRFC.nc", "${polydir}/CBRFC.nc", "${polydir}/CNRFC.nc", "${polydir}/LMRFC.nc", "${polydir}/MARFC.nc", "${polydir}/MBRFC.nc", "${polydir}/NCRFC.nc", "${polydir}/NERFC.nc", "${polydir}/NWRFC.nc", "${polydir}/OHRFC.nc", "${polydir}/SERFC.nc", "${polydir}/WGRFC.nc", "${polydir}/CNSRFCS.nc" ];
    sid     = [];
    llpnt = [];
 }
