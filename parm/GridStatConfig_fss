@@ -140,7 +140,7 @@ interp = {
 nbrhd = {
    field      = BOTH;
    shape      = SQUARE;
-   width      = [ 1,5,9,13,17,21,25,31];
+   width      = [ 1,3,5,7,9,11,13,17,21,25,31];
    cov_thresh = [ >=0.5 ];
    vld_thresh = 1.0;
 }
@@ -216,7 +216,7 @@ nc_pairs_flag = {
 
 grid_weight_flag = NONE;
 tmp_dir          = "/tmp";
-output_prefix    = "fss_${MODEL}_${OBTYPE}";
+output_prefix    = "fss_${acc}_${MODEL}_${OBTYPE}";
 //version 	 = "V8.1";
 
 ////////////////////////////////////////////////////////////////////////////////

@@ -65,25 +65,18 @@ for n in range(nstations):
     #elev_now = station_elev[n].strip()
     #if elev_now == '--':
     #   elev_now = 'NA'
-#    elev_now = '-9999.00'
-    elev_now = '0.00'
+    elev_now = '-9999.00'
     #column 7
     variable_name_now = '61'
     #column 8
     level_now = '24'
     #column 9 
     #height_now = '0'
-#    height_now = '-9999.00'
-    height_now = '0.00'
+    height_now = '-9999.00'
     #column 10
     qc_string_now = 'NA'
     #column 11
-    pcpamt=station_prcp[n].strip()
-    if float(pcpamt) < 0:
-       observation_value_now = str(-9999.)
-    else:
-       observation_value_now = str(float(pcpamt) * 25.4) #CHANGE UNITS TO MM
-
+    observation_value_now = str(float(station_prcp[n].strip()) * 25.4) #CHANGE UNITS TO MM
     #write to file
     if os.path.exists(usa_dlyprcp_file_ascii2nc_format):
          append_write = 'a' # append if already exists

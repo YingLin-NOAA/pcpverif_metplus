@@ -6,6 +6,11 @@ set -x
 export polydir=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/masks/rfcs
 export vday=20190915
 
+export model=pcprtma
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell2/nco/ops/com/rtma/prod
+export obspath=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/gauge_nc
+
 echo 'Actual output starts here:'
 
 ${YLMETPLUS_PATH}/ush/master_metplus.py \

@@ -53,11 +53,11 @@ if [ ! -s $GAUGENCDIR/good-usa-dlyprcp-${vday}.nc ]
 then
   if [ -s $VERFDIR/good-usa-dlyprcp-${vday} ]
   then
-#    grep -v '\-9999.' $VERFDIR/good-usa-dlyprcp-${vday} > $wrkdir/good-usa-dlyprcp-${vday}
+    grep -v '\-9999.' $VERFDIR/good-usa-dlyprcp-${vday} > $wrkdir/good-usa-dlyprcp-${vday}
     export desc="from_APCP"
     export model_var=APCP
     export DATA_OUTgauge=$GAUGENCDIR
-    export gauge_dir=$VERFDIR
+    export gauge_dir=$wrkdir  
     python ${MET_HOME}/precip_ascii2nc.py 
   else
     echo '$gauge_dir/good-usa-dlyprcp-${vday} not found!  Exit.'

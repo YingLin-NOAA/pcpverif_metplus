@@ -216,7 +216,7 @@ nc_pairs_flag = {
 
 grid_weight_flag = NONE;
 tmp_dir          = "/tmp";
-output_prefix    = "ctc_sl2l2_${MODEL}_${OBTYPE}";
+output_prefix    = "ctc_sl1l2_${acc}_${MODEL}_${OBTYPE}";
 //version 	 = "V8.1";
 
 ////////////////////////////////////////////////////////////////////////////////
