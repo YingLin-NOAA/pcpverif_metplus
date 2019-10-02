@@ -4,7 +4,7 @@ set -x
 
 # export for pcprtma_24h.conf:
 export polydir=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/masks/rfcs
-export vday=20190915
+export vday=20191001
 
 export model=pcprtma
 export MODEL=`echo $model | tr a-z A-Z`
