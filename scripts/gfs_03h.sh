@@ -4,7 +4,7 @@ set -x
 module load prod_util/1.1.3 # for FINDDATE
 echo 'Actual output starts here:'
 
-export vday=20190917
+export vday=20190914
 export polydir=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/masks/conus14
 
 export acc=03h # for stats output prefix in GridStatConfig
@@ -15,7 +15,8 @@ vdayp1=`$FINDDATE $vday d+1`
 # prod CCPA directory is $COMCCPA.$day:
 
 COMCCPA=/gpfs/dell1/nco/ops/com/ccpa/prod/ccpa
-MYCCPA=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/renamed3h
+METPLUS_OUT=/gpfs/dell2/ptmp/Ying.Lin/metplus.out
+MYCCPA=${METPLUS_OUT}/ccpa/renamed3h
 if [ ! -d $MYCCPA ]
 then
   mkdir -p $MYCCPA

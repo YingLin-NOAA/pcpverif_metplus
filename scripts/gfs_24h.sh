@@ -2,7 +2,7 @@
 set -x
 . ~/dots/dot.for.metplus
 
-export vday=20190917
+export vday=20190914
 export model=gfs
 export MODEL=`echo $model | tr a-z A-Z`
 export acc=24h # for stats output prefix in GridStatConfig

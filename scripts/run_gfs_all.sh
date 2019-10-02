@@ -13,12 +13,14 @@
 set -x
 . ~/dots/dot.for.metplus
 
-# load ImageMagick module - /usr/bin/convert not on compute node? 
-# module load imagemagick/6.9.9-25
-
 echo 'Actual output starts here:'
-export vday=`date +%Y%m%d -d "4 day ago"`
-#export vday=20190916
+if [ $# -eq 0 ]
+then
+  export vday=`date +%Y%m%d -d "2 day ago"`
+else
+  export vday=$1
+fi
+
 export model=gfs
 export MODEL=`echo $model | tr a-z A-Z`
 
@@ -48,12 +50,13 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 # 3h ctc/sl1l2: 
-export acc=24h # for stats output prefix in GridStatConfig
+export acc=03h # for stats output prefix in GridStatConfig
 # Copy CCPA 3-hourly to metplus.out/ccpa/renamed3h, since in the prod CCPA 
 # directory the path/file names are designed for GEFS cycles and too convoluted.
 # Rename them to make things easier for METplus:
 
-MYCCPA=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.out/ccpa/renamed3h
+METPLUS_OUT=/gpfs/dell2/ptmp/Ying.Lin/metplus.out
+MYCCPA=${METPLUS_OUT}/ccpa/renamed3h
 if [ -d $MYCCPA ]
 then
   mkdir -p $MYCCPA
