@@ -17,7 +17,8 @@ module load
 echo 'Actual output starts here:'
 if [ $# -eq 0 ]
 then
-  export vday=`date +%Y%m%d -d "2 day ago"`
+#  export vday=`date +%Y%m%d -d "2 day ago"`
+  export vday=20191015
 else
   export vday=$1
 fi
@@ -51,68 +52,9 @@ export acc=24h # for stats output prefix in GridStatConfig
 
 # 24h ctc/sl1l2 scores:
 
-export model=gfs
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/com/gfs/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-# 24h FSS for GFS:
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h_fss.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-# 24h ctc/sl1l2 scores for RAP/HRRR: 
-export model=rap
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/nco/ops/com/rap/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
 export model=rapx
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
-w${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=hrrr
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/nco/ops/com/hrrr/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-# 24h ctc/sl1l2 scores for CAMs: 
-export model=fv3sar
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Benjamin.Blake/com/fv3cam/para
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=fv3sarx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Eric.Rogers/com/fv3cam/para
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-# 24h ctc/sl1l2 scores for CMC/CMCGLB (same modpath):
-export modpath=/gpfs/dell1/nco/ops/dcom/prod/
-
-export model=cmc
-export MODEL=`echo $model | tr a-z A-Z`
-# 24h ctc/sl1l2 scores:
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=cmcglb
-export MODEL=`echo $model | tr a-z A-Z`
-# 24h ctc/sl1l2 scores:
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

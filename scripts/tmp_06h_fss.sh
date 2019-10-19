@@ -18,8 +18,8 @@ module load CFP/2.0.1
 
 echo 'Actual output starts here:'
 
-export vday=`date +%Y%m%d -d "2 days ago"`
-#export vday=20191001
+#export vday=`date +%Y%m%d -d "2 days ago"`
+export vday=20191015
 
 export acc=06h # for stats output prefix in GridStatConfig
 
@@ -58,60 +58,11 @@ do
   sleep $hr 
   export vhr=$hr
 
-  export model=fv3sar
-  export MODEL=FV3SAR
-  export modpath=/gpfs/$disk2/ptmp/Benjamin.Blake/com/fv3cam/para
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=fv3sarx
-  export MODEL=FV3SARX
-  export modpath=/gpfs/$disk2/ptmp/Eric.Rogers/com/fv3cam/para
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=gfs
-  export MODEL=GFS
-  export modpath=/gpfs/dell1/nco/ops/com/gfs/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/gfs_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=rap
-  export MODEL=RAP
-  export modpath=/gpfs/hps/nco/ops/com/rap/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/rap_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
   export model=rapx
   export MODEL=RAPX
   export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/rap_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=hrrr
-  export MODEL=HRRR
-  export modpath=/gpfs/hps/nco/ops/com/hrrr/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/hrrr_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=cmc
-  export MODEL=CMC
-  export modpath=/gpfs/dell1/nco/ops/dcom/prod/
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/cmc_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=cmcglb
-  export MODEL=CMCGLB
-  export modpath=/gpfs/dell1/nco/ops/dcom/prod/
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/cmcglb_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 EOF

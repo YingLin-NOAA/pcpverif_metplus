@@ -46,15 +46,18 @@ if domain == 'wexp':
   llcrnrlat=18
   urcrnrlon=-58
   urcrnrlat=58
+  m = Basemap(projection='cyl',llcrnrlon=llcrnrlon,llcrnrlat=llcrnrlat,
+                               urcrnrlon=urcrnrlon,urcrnrlat=urcrnrlat,
+                               resolution='l')
 elif domain == 'conus':
-  llcrnrlon=-130
-  llcrnrlat=21
-  urcrnrlon=-62
-  urcrnrlat=54
+  llcrnrlon=-120
+  llcrnrlat=19
+  urcrnrlon=-57
+  urcrnrlat=50
+  m = Basemap(projection='lcc', llcrnrlon=llcrnrlon,llcrnrlat=llcrnrlat,
+                               urcrnrlon=urcrnrlon,urcrnrlat=urcrnrlat,
+                               resolution='l',lat_1=33,lat_2=45,lon_0=-95)
 
-m = Basemap(projection='cyl',llcrnrlon=llcrnrlon,llcrnrlat=llcrnrlat,
-                             urcrnrlon=urcrnrlon,urcrnrlat=urcrnrlat,
-                             resolution='l')
 # draw coastlines, state and country boundaries, edge of map.
 m.drawcoastlines()
 m.drawstates()
