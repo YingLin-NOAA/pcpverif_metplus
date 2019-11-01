@@ -67,7 +67,7 @@ do
 
   export model=fv3sarx
   export MODEL=FV3SARX
-  export modpath=/gpfs/$disk2/ptmp/Eric.Rogers/com/fv3cam/para
+  export modpath=/gpfs/$disk2/ptmp/emc.campara/com/fv3cam/para
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

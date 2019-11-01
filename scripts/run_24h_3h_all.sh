@@ -95,7 +95,7 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
 
 export model=fv3sarx
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Eric.Rogers/com/fv3cam/para
+export modpath=/gpfs/$disk2/ptmp/emc.campara/com/fv3cam/para
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

@@ -10,6 +10,11 @@ from ncepy import gem_color_list
 #   nws_precip_1day_20180512_conus.nc
 # 2018/05/18: Jacob got it to work for nc sum of ST4 from pcp_combine!
 # 2019/09/12: YL modified to work for LCC projection
+#
+# 1st argument: nc file
+# 2nd argument: domain
+#   wexp, conus, nw, colo    
+#   conus plot in lcc projection, the others are in cyl.  
 
 from netCDF4 import Dataset as NetCDFFile
 import numpy as np
@@ -57,6 +62,24 @@ elif domain == 'conus':
   m = Basemap(projection='lcc', llcrnrlon=llcrnrlon,llcrnrlat=llcrnrlat,
                                urcrnrlon=urcrnrlon,urcrnrlat=urcrnrlat,
                                resolution='l',lat_1=33,lat_2=45,lon_0=-95)
+
+if domain == 'nw':
+  llcrnrlon=-128
+  llcrnrlat=35
+  urcrnrlon=-107
+  urcrnrlat=55
+  m = Basemap(projection='cyl',llcrnrlon=llcrnrlon,llcrnrlat=llcrnrlat,
+                               urcrnrlon=urcrnrlon,urcrnrlat=urcrnrlat,
+                               resolution='l')
+
+elif domain == 'colo':
+  llcrnrlon=-112
+  llcrnrlat=35
+  urcrnrlon=-100
+  urcrnrlat=45
+  m = Basemap(projection='cyl',llcrnrlon=llcrnrlon,llcrnrlat=llcrnrlat,
+                               urcrnrlon=urcrnrlon,urcrnrlat=urcrnrlat,
+                               resolution='l')
 
 # draw coastlines, state and country boundaries, edge of map.
 m.drawcoastlines()
