@@ -35,6 +35,7 @@ elif [ $h1 = v ]; then
   otherdell=mars
 else
   echo Marchine is neither Mars nor Venus.  Exit.  
+  exit
 fi
 
 # Find out if the gauge .nc file exists.  If not, try getting it from $otherdell
