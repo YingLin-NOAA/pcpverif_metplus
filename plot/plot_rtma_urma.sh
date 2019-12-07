@@ -1,9 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 set -x
+
+. ~/dots/dot.for.python
 
 metout=/gpfs/dell2/ptmp/Ying.Lin/metplus.out
 pyscript=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/plot
-rzdmdir=/home/www/emc/htdocs/users/verification/precip/rtma-urma.v2.8/daily/plots
+rzdmdir=/home/www/emc/htdocs/users/verification/precip/rtma-urma/v2p8/daily/plots
 plotarch=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.rtma-urma.images
 
 # Where is the ST4 directory (v2.8.0 output run on prod phase2)? 
@@ -20,7 +22,7 @@ fi
 if [ $# -gt 0 ]; then
   day=$1
 else
-  echo need input yyyymmdd
+  day=`date +%Y%m%d -d "2 day ago"`
 fi
 
 #st4dir=/gpfs/dell2/ptmp/Ying.Lin/wget_st4
@@ -87,7 +89,6 @@ then
   scp pcpurma2.$day.png wd22yl@emcrzdm:$rzdmdir/urma/.
 fi
 
-#day=`$FINDDATE $day d+1`
-#done
-
-
+# my log in shell on rzdm is csh, so use 'setenv' instead of 'export' in the
+# ssh to rzdm below:
+ssh wd22yl@emcrzdm "setenv lastday $day; $rzdmdir/../make_links_rtma.sh; $rzdmdir/../make_links_urma.sh"
