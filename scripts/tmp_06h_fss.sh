@@ -5,7 +5,7 @@
 #BSUB -R affinity[core(4)]
 #BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_fss06.%J
 #BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_fss06.%J
-#BSUB -W 08:58
+#BSUB -W 01:58
 #BSUB -q "dev_shared"
 #BSUB -R "rusage[mem=1500]"
 #BSUB -R "span[ptile=1]"
@@ -19,7 +19,7 @@ module load CFP/2.0.1
 echo 'Actual output starts here:'
 
 #export vday=`date +%Y%m%d -d "2 days ago"`
-export vday=20191015
+export vday=20191119
 
 export acc=06h # for stats output prefix in GridStatConfig
 
@@ -58,11 +58,11 @@ do
   sleep $hr 
   export vhr=$hr
 
-  export model=rapx
-  export MODEL=RAPX
-  export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
+  export model=hrrrx
+  export MODEL=HRRRX
+  export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/rap_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/hrrrx_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 EOF

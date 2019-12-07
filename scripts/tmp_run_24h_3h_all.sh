@@ -4,7 +4,7 @@
 #BSUB -n 1
 #BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_24h_3h.%J
 #BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_24h_3h.%J
-#BSUB -W 03:58
+#BSUB -W 01:58
 #BSUB -q "dev_shared"
 #BSUB -R "rusage[mem=1500]"
 #BSUB -R affinity[core(1)]
@@ -17,8 +17,7 @@ module load
 echo 'Actual output starts here:'
 if [ $# -eq 0 ]
 then
-#  export vday=`date +%Y%m%d -d "2 day ago"`
-  export vday=20191015
+  export vday=20191119
 else
   export vday=$1
 fi
@@ -48,82 +47,16 @@ else
   disk2=gp2
 fi
 
-export acc=24h # for stats output prefix in GridStatConfig
-
-# 24h ctc/sl1l2 scores:
-
-export model=rapx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-# 3h ctc/sl1l2 for GFS:
 export acc=03h # for stats output prefix in GridStatConfig
 
-# Copy CCPA 3-hourly to metplus.out/ccpa/renamed3h, since in the prod CCPA 
-# directory the path/file names are designed for GEFS cycles and too convoluted.
-# Rename them to make things easier for METplus:
-
-METPLUS_OUT=/gpfs/dell2/ptmp/Ying.Lin/metplus.out
-MYCCPA=${METPLUS_OUT}/ccpa/renamed3h
-if [ ! -d $MYCCPA ]
-then
-  mkdir -p $MYCCPA
-fi
-
-COMCCPA=$ccpapath/ccpa
-cp $COMCCPA.$vday/00/ccpa.t00z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}00.03h
-cp $COMCCPA.$vday/06/ccpa.t03z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}03.03h
-cp $COMCCPA.$vday/06/ccpa.t06z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}06.03h
-cp $COMCCPA.$vday/12/ccpa.t09z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}09.03h
-cp $COMCCPA.$vday/12/ccpa.t12z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}12.03h
-cp $COMCCPA.$vday/18/ccpa.t15z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}15.03h
-cp $COMCCPA.$vday/18/ccpa.t18z.03h.hrap.conus.gb2   $MYCCPA/ccpa.${vday}18.03h
-cp $COMCCPA.$vdayp1/00/ccpa.t21z.03h.hrap.conus.gb2 $MYCCPA/ccpa.${vday}21.03h
-
-export model=gfs
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/com/gfs/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 # 3h ctc/sl1l2 for RAP/HRRR:
-export model=rap
+
+export model=hrrrx
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/nco/ops/com/rap/prod
+export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-export model=rapx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=hrrr
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/nco/ops/com/hrrr/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-# 3h ctc/sl1l2 for CAMs:
-export model=fv3sar
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Benjamin.Blake/com/fv3cam/para
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=fv3sarx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Eric.Rogers/com/fv3cam/para
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 

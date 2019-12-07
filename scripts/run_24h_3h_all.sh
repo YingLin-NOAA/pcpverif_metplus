@@ -85,10 +85,17 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=hrrrx
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 # 24h ctc/sl1l2 scores for CAMs: 
 export model=fv3sar
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Benjamin.Blake/com/fv3cam/para
+export modpath=/gpfs/dell1/ptmp/Benjamin.Blake/com/fv3cam/para
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -117,7 +124,7 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-# 3h ctc/sl1l2 for GFS:
+# 3h ctc/sl1l2:
 export acc=03h # for stats output prefix in GridStatConfig
 
 # Copy CCPA 3-hourly to metplus.out/ccpa/renamed3h, since in the prod CCPA 
@@ -170,10 +177,17 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=hrrrx
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 # 3h ctc/sl1l2 for CAMs:
 export model=fv3sar
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/$disk2/ptmp/Benjamin.Blake/com/fv3cam/para
+export modpath=/gpfs/dell1/ptmp/Benjamin.Blake/com/fv3cam/para
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

@@ -5,7 +5,7 @@
 #BSUB -R affinity[core(4)]
 #BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_fss06.%J
 #BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_fss06.%J
-#BSUB -W 08:58
+#BSUB -W 12:00
 #BSUB -q "dev_shared"
 #BSUB -R "rusage[mem=1500]"
 #BSUB -R "span[ptile=1]"
@@ -60,7 +60,7 @@ do
 
   export model=fv3sar
   export MODEL=FV3SAR
-  export modpath=/gpfs/$disk2/ptmp/Benjamin.Blake/com/fv3cam/para
+  export modpath=/gpfs/dell1/ptmp/Benjamin.Blake/com/fv3cam/para
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -100,6 +100,13 @@ do
     -c ${YLMETPLUS_PATH}/yl/parm/models/hrrr_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+  export model=hrrrx
+  export MODEL=HRRRX
+  export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
+  ${YLMETPLUS_PATH}/ush/master_metplus.py \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/hrrrx_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
   export model=cmc
   export MODEL=CMC
   export modpath=/gpfs/dell1/nco/ops/dcom/prod/
@@ -125,6 +132,11 @@ cat poescript
 echo 
 
 mpirun -l cfp poescript
+
+# 6h FSS runs much longer than the 24h/3h runs (even including the FSS24h).  So
+# run METplus load here:
+
+/gpfs/dell2/emc/verification/noscrub/Ying.Lin/awsmv/load.metplus/loadit_oneday.sh > /gpfs/dell2/ptmp/Ying.Lin/cron.out/awsload_qpf.out 2>&1
 
 exit
 
