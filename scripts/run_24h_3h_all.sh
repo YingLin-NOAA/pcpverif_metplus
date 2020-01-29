@@ -92,6 +92,13 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=conusfv3
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps2/ptmp/Matthew.Pyle/oconus_new/com/hiresw/para
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 # 24h ctc/sl1l2 scores for CAMs: 
 export model=fv3sar
 export MODEL=`echo $model | tr a-z A-Z`
@@ -180,6 +187,13 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
 export model=hrrrx
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=conusfv3
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps2/ptmp/Matthew.Pyle/oconus_new/com/hiresw/para
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

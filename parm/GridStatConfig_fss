@@ -95,7 +95,7 @@ climo_cdf_bins = 1;
 // Verification masking regions
 //
 mask = {
-   grid = ["FULL"];
+   grid = [];
    poly = [ "${polydir}/CONUS.nc"];
 }
 
