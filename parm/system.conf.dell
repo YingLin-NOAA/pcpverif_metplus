@@ -7,11 +7,10 @@
 #   parm/use_cases/grid_to_grid/examples/precip_continuous.conf
 # PROJ_DIR = /usrx/local/dev/packages/met/METplus/METplus-2.1_sample_data
 PROJ_DIR = /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data
-
-OUTPUT_BASE = /gpfs/dell2/ptmp/Ying.Lin/metplus.out
-STATS_BASE = /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.stats
+INPUT_BASE = {PROJ_DIR}
+OUTPUT_BASE = /gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out
+STATS_BASE = /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.stats.v3
 TMP_DIR = {OUTPUT_BASE}/tmp
-METPLUS_BASE = /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus
 MET_INSTALL_DIR = /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1
 MET_BUILD_BASE = {MET_INSTALL_DIR}
 PARM_BASE = {METPLUS_BASE}/parm
@@ -30,14 +29,14 @@ LOG_TIMESTAMP_TEMPLATE = %Y%m%d%H%M%S
 # the tc_pairs binary ... ldd tc_pairs and it cant find lib.netcdf.so.6                                       
 
 WGRIB2 = {ENV[WGRIB2]}   ;; MUST run module load grib_util
-CUT_EXE = /bin/cut
-TR_EXE = /usr/bin/tr
-RM_EXE = /bin/rm
-NCAP2_EXE = ncap2                 ;; MUST run module load nco
-#CONVERT_EXE = /usr/bin/convert  # <--this is not available on compute node
-CONVERT_EXE = /usrx/local/prod/packages/ImageMagick/6.9.9-25/bin/convert
-NCDUMP_EXE = {MET_INSTALL_DIR}/external_libs/bin/ncdump  ;; DO NOT run module load netcdf
-EGREP_EXE = /bin/egrep
+CUT = /bin/cut
+TR = /usr/bin/tr
+RM = /bin/rm
+NCAP2 = ncap2                 ;; MUST run module load nco
+# note that /usr/bin/convert is not available on compute node
+CONVERT = /usrx/local/prod/packages/ImageMagick/6.9.9-25/bin/convert
+NCDUMP = {MET_INSTALL_DIR}/external_libs/bin/ncdump  ;; DO NOT run module load netcdf
+EGREP = /bin/egrep
 
 #GEMPAKTOCF_BIN = /d1/mccabe/bin/GempakToCF                                                                  
 
