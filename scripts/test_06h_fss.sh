@@ -18,8 +18,8 @@ module load CFP/2.0.1
 
 echo 'Actual output starts here:'
 
-export vday=`date +%Y%m%d -d "2 days ago"`
-#export vday=20200127
+#export vday=`date +%Y%m%d -d "2 days ago"`
+export vday=20200127
 
 export acc=06h # for stats output prefix in GridStatConfig
 
@@ -61,19 +61,6 @@ do
     -c ${YLMETPLUS_PATH}/yl/parm/models/conusarw2_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-  export model=conusnest
-  export MODEL=CONUSNEST
-  export modpath=/gpfs/dell1/nco/ops/com/nam/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusnest_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=conusnmmb
-  export MODEL=CONUSNMMB
-  export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusnmmb_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 EOF
   echo run_fss_${hr}.sh >> poescript
 done
@@ -85,6 +72,11 @@ cat poescript
 echo 
 
 mpirun -l cfp poescript
+
+# 6h FSS runs much longer than the 24h/3h runs (even including the FSS24h).  So
+# run METplus load here:
+
+#/gpfs/dell2/emc/verification/noscrub/Ying.Lin/awsmv/load.metplus/loadit_oneday.sh > /gpfs/dell2/ptmp/Ying.Lin/cron.out/awsload_qpf.out 2>&1
 
 exit
 

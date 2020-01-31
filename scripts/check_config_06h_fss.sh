@@ -18,8 +18,8 @@ module load CFP/2.0.1
 
 echo 'Actual output starts here:'
 
-export vday=`date +%Y%m%d -d "2 days ago"`
-#export vday=20200127
+#export vday=`date +%Y%m%d -d "2 days ago"`
+export vday=20200227
 
 export acc=06h # for stats output prefix in GridStatConfig
 
@@ -41,50 +41,22 @@ cd $wrkdir
 #  it doesn't get 'carried over' to the later part of the poe script, so
 #  ${$model}_06h_fss.conf doesn't work, it needs to be spelled out as e.g.
 #    gfs_06h_fss.conf.
-for hr in 00 06 12 18
-do
-  cat > run_fss_${hr}.sh <<EOF
-  sleep $hr 
+hr=00
   export vhr=$hr
 
   export model=conusarw
   export MODEL=CONUSARW
   export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
+  ${YLMETPLUS_PATH}/ush/validate_config.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/conusarw_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
   export model=conusarw2
   export MODEL=CONUSARW2
   export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
+  ${YLMETPLUS_PATH}/ush/validate_config.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/conusarw2_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=conusnest
-  export MODEL=CONUSNEST
-  export modpath=/gpfs/dell1/nco/ops/com/nam/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusnest_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=conusnmmb
-  export MODEL=CONUSNMMB
-  export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusnmmb_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-EOF
-  echo run_fss_${hr}.sh >> poescript
-done
-chmod 755 run_fss*.sh
-
-echo 
-echo Here is the poescript for making FSS06 computations valid at 00/06/12/18Z:
-cat poescript
-echo 
-
-mpirun -l cfp poescript
 
 exit
 
