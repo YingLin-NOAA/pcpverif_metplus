@@ -42,8 +42,10 @@ h1=`hostname|cut -c 1-1`
 if [ $h1 = m ]
 then
   disk2=tp2
+  disk3=td3
 else
   disk2=gp2
+  disk3=gd3
 fi
 
 # poe scripts sleep 00/06/12/18 seconds so there'll more likely be separate 
@@ -60,7 +62,7 @@ do
 
   export model=fv3sar
   export MODEL=FV3SAR
-  export modpath=/gpfs/dell1/ptmp/Benjamin.Blake/com/fv3cam/para
+  export modpath=/gpfs/$disk3/ptmp/emc.campara/com/fv3cam/para
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -86,25 +88,11 @@ do
     -c ${YLMETPLUS_PATH}/yl/parm/models/rap_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-  export model=rapx
-  export MODEL=RAPX
-  export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/rap_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
   export model=hrrr
   export MODEL=HRRR
   export modpath=/gpfs/hps/nco/ops/com/hrrr/prod
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/hrrr_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=hrrrx
-  export MODEL=HRRRX
-  export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/hrrrx_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
   export model=conusfv3

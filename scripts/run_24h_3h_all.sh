@@ -43,8 +43,10 @@ h1=`hostname|cut -c 1-1`
 if [ $h1 = m ]
 then
   disk2=tp2
+  disk3=td3
 else
   disk2=gp2
+  disk3=gd3
 fi
 
 export acc=24h # for stats output prefix in GridStatConfig
@@ -71,23 +73,9 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-export model=rapx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
-w${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
 export model=hrrr
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hrrr/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=hrrrx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -102,7 +90,7 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
 # 24h ctc/sl1l2 scores for CAMs: 
 export model=fv3sar
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/ptmp/Benjamin.Blake/com/fv3cam/para
+export modpath=/gpfs/$disk3/ptmp/emc.campara/com/fv3cam/para
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -170,23 +158,9 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-export model=rapx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/Ming.Hu/com/rap/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
 export model=hrrr
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hrrr/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=hrrrx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/Benjamin.Blake/com/hrrr/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -201,7 +175,7 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
 # 3h ctc/sl1l2 for CAMs:
 export model=fv3sar
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/ptmp/Benjamin.Blake/com/fv3cam/para
+export modpath=/gpfs/$disk3/ptmp/emc.campara/com/fv3cam/para
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
