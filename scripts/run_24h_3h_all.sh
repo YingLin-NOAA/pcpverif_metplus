@@ -46,28 +46,28 @@ export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 export model=conusarw2
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 export model=conusnest
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/dell1/nco/ops/com/nam/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 export model=conusnmmb
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 
 # -------------------------
@@ -101,28 +101,28 @@ export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 export model=conusarw2
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 export model=conusnest
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/dell1/nco/ops/com/nam/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 export model=conusnmmb
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.new
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 
 
