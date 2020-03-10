@@ -4,8 +4,14 @@ if [ $# -eq 1 ]
 then
   day=$1
 else
-  day=`date +%Y%m%d -d "5 days ago"`
+  day=`date +%Y%m%d -d "1 day ago"`
 fi
+
+# DWD data sent at 03:10Z $dayp1
+# UKMO 12Z data sent at 20:00Z $day
+# Run this job in cron at 10:00Z for $daym1
+
+WGRIB2=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.1.1/exec/wgrib2
 
 DCOM=/gpfs/dell1/nco/ops/dcom/prod/$day/qpf_verif
 MYDCOM=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf/$day

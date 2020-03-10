@@ -74,6 +74,13 @@ do
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/conusnmmb_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+  export model=jma
+  export MODEL=JMA
+  export modpath=/gpfs/dell1/nco/ops/dcom/prod
+  ${YLMETPLUS_PATH}/ush/master_metplus.py \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/jma_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 EOF
   echo run_fss_${hr}.sh >> poescript
 done

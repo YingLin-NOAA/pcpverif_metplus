@@ -69,6 +69,40 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=dwd
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=ecmwf
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/dcom/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=jma
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/dcom/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=metfr
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/dcom/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=ukmo
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 # -------------------------
 # 3h ctc/sl1l2:
