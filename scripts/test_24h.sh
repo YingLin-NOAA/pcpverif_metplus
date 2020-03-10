@@ -15,7 +15,7 @@ set -x
 module load 
 
 echo 'Actual output starts here:'
-export vday=20200301
+export vday=20200306
 vdayp1=`date -d "$vday + 1 day" +%Y%m%d`
 
 export ccpapath=/gpfs/dell1/nco/ops/com/ccpa/prod
@@ -36,52 +36,12 @@ cd $wrkdir
 # 24h ctc/sl1l2 scores:
 export acc=24h # for stats output prefix in GridStatConfig
 
-export model=ukmo
+export model=nam
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
+export modpath=/gpfs/dell1/nco/ops/com/nam/prod
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 exit
-
-export model=dwd
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-exit
-
-export model=ecmwf
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/dcom/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=jma
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/dcom/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=metfr
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/dcom/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=ukmo
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-exit
-
 

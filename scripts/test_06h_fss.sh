@@ -19,7 +19,7 @@ module load CFP/2.0.1
 echo 'Actual output starts here:'
 
 #export vday=`date +%Y%m%d -d "2 days ago"`
-export vday=20200301
+export vday=20200306
 
 export acc=06h # for stats output prefix in GridStatConfig
 
@@ -47,11 +47,11 @@ do
   sleep $hr 
   export vhr=$hr
 
-  export model=jma
-  export MODEL=JMA
-  export modpath=/gpfs/dell1/nco/ops/dcom/prod
+  export model=nam
+  export MODEL=NAM
+  export ccpapath=/gpfs/dell1/nco/ops/com/ccpa/prod
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusarw_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/nam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 EOF
   echo run_fss_${hr}.sh >> poescript
