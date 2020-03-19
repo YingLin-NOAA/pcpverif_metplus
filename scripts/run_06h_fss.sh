@@ -68,11 +68,18 @@ do
     -c ${YLMETPLUS_PATH}/yl/parm/models/conusnest_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-  export model=conusnmmb
-  export MODEL=CONUSNMMB
+  export model=conusnest
+  export MODEL=CONUSNEST
+  export modpath=/gpfs/dell1/nco/ops/com/nam/prod
+  ${YLMETPLUS_PATH}/ush/master_metplus.py \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/conusnest_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+  export model=nam
+  export MODEL=NAM
   export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusnmmb_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/nam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
   export model=jma

@@ -19,7 +19,7 @@ module load CFP/2.0.1
 echo 'Actual output starts here:'
 
 #export vday=`date +%Y%m%d -d "2 days ago"`
-export vday=20200306
+export vday=20200308
 
 export acc=06h # for stats output prefix in GridStatConfig
 
@@ -46,10 +46,10 @@ do
   cat > run_fss_${hr}.sh <<EOF
   sleep $hr 
   export vhr=$hr
-
+1
   export model=nam
   export MODEL=NAM
-  export ccpapath=/gpfs/dell1/nco/ops/com/ccpa/prod
+  export modpath=/gpfs/dell1/nco/ops/com/nam/prod
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/nam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell

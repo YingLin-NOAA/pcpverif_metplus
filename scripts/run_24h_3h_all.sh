@@ -69,6 +69,13 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=nam
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/com/nam/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 export model=dwd
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
@@ -103,6 +110,40 @@ export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+# SREF 24h: separate config files for srmean and srfreqm, same config file
+#   for all the individual members:
+
+export modpath=/gpfs/dell2/nco/ops/com/sref/prod
+
+export model=srmean
+export MODEL=`echo $model | tr a-z A-Z`
+
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=srfreqm
+export MODEL=`echo $model | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+for dycore in arw nmb
+do
+  export dycore
+  for mem in ctl n1 n2 n3 n4 n5 n6 p1 p2 p3 p4 p5 p6
+  do 
+    export mem
+    export model=sr${dycore}${mem}
+    export MODEL=`echo $model | tr a-z A-Z`
+
+    ${YLMETPLUS_PATH}/ush/master_metplus.py \
+      -c ${YLMETPLUS_PATH}/yl/parm/models/sref_${acc}.conf \
+      -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+  done
+done
+
 
 # -------------------------
 # 3h ctc/sl1l2:
@@ -158,5 +199,11 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=nam
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/com/nam/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
 
