@@ -8,7 +8,7 @@
 # PROJ_DIR = /usrx/local/dev/packages/met/METplus/METplus-2.1_sample_data
 PROJ_DIR = /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/METplus-2.0.4_sample_data
 INPUT_BASE = {PROJ_DIR}
-OUTPUT_BASE = /gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out
+OUTPUT_BASE = /gpfs/dell2/ptmp/Ying.Lin/metplus.v3b2.out
 STATS_BASE = /gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus.stats
 TMP_DIR = {OUTPUT_BASE}/tmp
 MET_INSTALL_DIR = /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/met/8.1

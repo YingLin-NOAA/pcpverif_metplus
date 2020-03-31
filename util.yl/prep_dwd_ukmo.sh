@@ -14,7 +14,7 @@ fi
 WGRIB2=/gpfs/dell1/nco/ops/nwprod/grib_util.v1.1.1/exec/wgrib2
 
 DCOM=/gpfs/dell1/nco/ops/dcom/prod/$day/qpf_verif
-MYDCOM=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf/$day
+MYDCOM=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3b2.out/dcom_intlqpf/$day
 
 mkdir -p $MYDCOM
 

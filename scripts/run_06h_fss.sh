@@ -10,7 +10,7 @@
 #BSUB -R "rusage[mem=1500]"
 #BSUB -R "span[ptile=1]"
 set -x
-. ~/dots/dot.for.metplus.v3
+. ~/dots/dot.for.metplus.v3b2
 # loading lsf, impi and CFP for the poe:
 module load lsf/10.1
 module load impi/18.0.1  

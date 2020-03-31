@@ -3,7 +3,7 @@
 #BSUB -P VERF-T2O
 #BSUB -n 1
 #BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_v3b2_24h_3h.%J
-#BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_3b2_24h_3h.%J
+#BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_v3b2_24h_3h.%J
 #BSUB -W 03:58
 #BSUB -q "dev_shared"
 #BSUB -R "rusage[mem=1500]"
@@ -11,7 +11,7 @@
 #BSUB -R "span[ptile=1]"
 
 set -x
-. ~/dots/dot.for.metplus.v3
+. ~/dots/dot.for.metplus.v3b2
 module load 
 
 echo 'Actual output starts here:'
@@ -78,7 +78,7 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
 
 export model=dwd
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
+export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3b2.out/dcom_intlqpf
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -106,7 +106,7 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
 
 export model=ukmo
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out/dcom_intlqpf
+export modpath=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3b2.out/dcom_intlqpf
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
@@ -154,7 +154,7 @@ export acc=03h # for stats output prefix in GridStatConfig
 # directory the path/file names are designed for GEFS cycles and too convoluted.
 # Rename them to make things easier for METplus:
 
-METPLUS_OUT=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3.out
+METPLUS_OUT=/gpfs/dell2/ptmp/Ying.Lin/metplus.v3b2.out
 MYCCPA=${METPLUS_OUT}/ccpa/renamed3h
 if [ ! -d $MYCCPA ]
 then
