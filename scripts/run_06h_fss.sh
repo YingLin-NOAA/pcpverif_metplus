@@ -26,7 +26,7 @@ export acc=06h # for stats output prefix in GridStatConfig
 export ccpapath=/gpfs/dell1/nco/ops/com/ccpa/prod
 export polydir=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/masks/conus14
 
-wrkdir=/gpfs/dell2/stmp/Ying.Lin/metplus.v3/fss06.`date -u +%Y%m%d%H%M%S`
+wrkdir=/gpfs/dell2/stmp/Ying.Lin/metplus.v3b2/fss06.`date -u +%Y%m%d%H%M%S`
 if [ -d $wrkdir ]
 then
   rm -f $wrkdir/*
