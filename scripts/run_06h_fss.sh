@@ -95,13 +95,6 @@ do
     -c ${YLMETPLUS_PATH}/yl/parm/models/hrrr_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-  export model=conusfv3
-  export MODEL=CONUSFV3
-  export modpath=/gpfs/hps2/ptmp/Matthew.Pyle/oconus_new/com/hiresw/para
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/conusfv3_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
   export model=cmc
   export MODEL=CMC
   export modpath=/gpfs/dell1/nco/ops/dcom/prod/

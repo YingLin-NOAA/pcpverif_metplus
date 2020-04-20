@@ -67,7 +67,7 @@ if [ $run_pcprtma -eq 1 ]; then
 
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/pcprtma_24h.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.pointstat
 fi
 
 if [ $run_pcprtma2p8 -eq 1 ]; then
@@ -77,7 +77,7 @@ if [ $run_pcprtma2p8 -eq 1 ]; then
 
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/pcprtma_24h.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.pointstat
 fi
 
 if [ $run_pcpurma -eq 1 ]; then
@@ -87,7 +87,7 @@ if [ $run_pcpurma -eq 1 ]; then
 
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/pcpurma_24h.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.pointstat
 fi
 
 if [ $run_pcpurma2p8 -eq 1 ]; then
@@ -97,7 +97,7 @@ if [ $run_pcpurma2p8 -eq 1 ]; then
 
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/pcpurma_24h.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.pointstat
 fi
 
 # Prod ST4 is gzip'd.  Copy it over to metplus.out:
@@ -116,7 +116,7 @@ if [ $run_st4 -eq 1 ]; then
   export modpath=$MYPRDST4
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.pointstat
 fi
 
 if [ $run_st4x -eq 1 ]; then
@@ -125,7 +125,7 @@ if [ $run_st4x -eq 1 ]; then
   export modpath=/gpfs/${disk2}/ptmp/emc.rtmapara/com/pcpanl/para
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell.pointstat
 fi
 
 exit
