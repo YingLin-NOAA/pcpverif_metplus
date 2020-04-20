@@ -52,20 +52,6 @@ do
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/conusfv3_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=fv3sar
-  export MODEL=FV3SAR
-  export modpath=/gpfs/hps/ptmp/emc.campara/fv3sar
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-  export model=fv3sarx
-  export MODEL=FV3SARX
-  export modpath=/gpfs/hps3/ptmp/emc.campara/fv3sarx
-  ${YLMETPLUS_PATH}/ush/master_metplus.py \
-    -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
-    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 EOF
   echo run_fss_${hr}.sh >> poescript
 done

@@ -2,8 +2,8 @@
 #BSUB -J METpl_24h_3h_v3
 #BSUB -P VERF-T2O
 #BSUB -n 1
-#BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus3_24h_3h.%J
-#BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus3_24h_3h.%J
+#BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus3_24h_3h_v3.%J
+#BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus3_24h_3h_v3.%J
 #BSUB -W 03:58
 #BSUB -q "dev_shared"
 #BSUB -R "rusage[mem=1500]"
@@ -48,35 +48,6 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-# The CAMs - note that the cams share the same config file fv3cam_24h.conf
-export model=fv3sar
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/ptmp/emc.campara/fv3sar
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=fv3sarx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/emc.campara/fv3sarx
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=firewx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/com/nam/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=nssl4arw
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/dcom/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
 # 3h ctc/sl1l2:
 export acc=03h # for stats output prefix in GridStatConfig
 
@@ -109,18 +80,4 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
-# For CAMs (they share a common config file):
-export model=fv3sar
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/ptmp/emc.campara/fv3sar
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=fv3sarx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/emc.campara/fv3sarx
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 

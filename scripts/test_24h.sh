@@ -1,28 +1,27 @@
 #!/bin/sh
-#BSUB -J METpl_24h_test
+#BSUB -J METpl_24h_3h_test
 #BSUB -P VERF-T2O
 #BSUB -n 1
-#BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_24h.%J
-#BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_24h.%J
-#BSUB -W 03:58
+#BSUB -o /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_v3_24h.%J
+#BSUB -e /gpfs/dell2/ptmp/Ying.Lin/cron.out/metplus_v3_24h.%J
+#BSUB -W 00:58
 #BSUB -q "dev_shared"
 #BSUB -R "rusage[mem=1500]"
 #BSUB -R affinity[core(1)]
 #BSUB -R "span[ptile=1]"
 
 set -x
-. ~/dots/dot.for.metplus
+. ~/dots/dot.for.metplus.v3
 module load 
 
 echo 'Actual output starts here:'
-export vday=20200112
-
-vdayp1=`$UTILROOT/ush/finddate.sh $vday d+1`
+export vday=20200331
+vdayp1=`date -d "$vday + 1 day" +%Y%m%d`
 
 export ccpapath=/gpfs/dell1/nco/ops/com/ccpa/prod
-export polydir=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus/yl/masks/conus14
+export polydir=/gpfs/dell2/emc/verification/noscrub/Ying.Lin/metplus3/yl/masks/conus14
 
-wrkdir=/gpfs/dell2/stmp/Ying.Lin/metplus/24h.`date -u +%Y%m%d%H%M%S`
+wrkdir=/gpfs/dell2/stmp/Ying.Lin/metplus.v3/test_24h.`date -u +%Y%m%d%H%M%S`
 
 
 if [ -d $wrkdir ]
@@ -33,15 +32,48 @@ else
 fi
 cd $wrkdir
 
-
-# 24h ctc/sl1l2 scores:
 export acc=24h # for stats output prefix in GridStatConfig
-
-export model=conusnmmb
+# 24h ctc/sl1l2 scores for CAMs.  Note that the cams share the same config file
+#   fv3cam_24h.conf
+export model=fv3sar
 export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
+export modpath=/gpfs/hps/ptmp/emc.campara/fv3sar
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=fv3sarx
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps3/ptmp/emc.campara/fv3sarx
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=firewx
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/com/nam/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=nssl4arw
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/dcom/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+exit
+
+export model=nam
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/dell1/nco/ops/com/nam/prod
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+exit
+
+
+exit
 
