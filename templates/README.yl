@@ -1,0 +1,9 @@
+2020/03/31 sample_fcst/2005080700/wrfprs_ruc13_12.tm00_G212:
+  for METplus.v2.1, this subdir/path was under 
+  /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/
+      METplus-2.1_sample_data/qpf/
+  For METplus.v3.0, it is under
+  /gpfs/dell2/emc/verification/noscrub/Julie.Prestopnik/METplus/
+      METplus-3.0_sample_data/met_test/data/
+  To avoid future disruptions, I'm copying the subdir/path to under 
+      yl/templates/.
