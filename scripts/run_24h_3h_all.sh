@@ -63,6 +63,13 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+export model=fv3sarda
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps2/ptmp/emc.campara/fv3sarda
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 export model=firewx
 export MODEL=`echo $model | tr a-z A-Z`
 export modpath=/gpfs/dell1/nco/ops/com/nam/prod
@@ -123,4 +130,12 @@ export modpath=/gpfs/hps3/ptmp/emc.campara/fv3sarx
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export model=fv3sarda
+export MODEL=`echo $model | tr a-z A-Z`
+export modpath=/gpfs/hps2/ptmp/emc.campara/fv3sarda
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_03h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 

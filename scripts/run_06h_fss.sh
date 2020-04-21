@@ -66,6 +66,14 @@ do
   ${YLMETPLUS_PATH}/ush/master_metplus.py \
     -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
     -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+  export model=fv3sarda
+  export MODEL=FV3SARDA
+  export modpath=/gpfs/hps2/ptmp/emc.campara/fv3sarda
+  ${YLMETPLUS_PATH}/ush/master_metplus.py \
+    -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_06h_fss.conf \
+    -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 EOF
   echo run_fss_${hr}.sh >> poescript
 done
