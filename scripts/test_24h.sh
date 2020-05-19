@@ -15,7 +15,7 @@ set -x
 module load 
 
 echo 'Actual output starts here:'
-export vday=20200331
+export vday=20200420
 vdayp1=`date -d "$vday + 1 day" +%Y%m%d`
 
 export ccpapath=/gpfs/dell1/nco/ops/com/ccpa/prod
@@ -33,47 +33,19 @@ fi
 cd $wrkdir
 
 export acc=24h # for stats output prefix in GridStatConfig
-# 24h ctc/sl1l2 scores for CAMs.  Note that the cams share the same config file
-#   fv3cam_24h.conf
-export model=fv3sar
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps/ptmp/emc.campara/fv3sar
+
+# 24h ctc/sl1l2 scores for HREF and HREFv3 means.  Note that each group of means
+# under HREF and HREFv3 shares the same config file (one config for HREF,
+# another for HREFv3).  Only the mean type changes. 
+
+# HREF mean/pmmn:
+export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
+
+export mtype=avrg
+export MTYPE=`echo $mtype | tr a-z A-Z`
 ${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefens_24h.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=fv3sarx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/hps3/ptmp/emc.campara/fv3sarx
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/fv3cam_24h.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=firewx
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/com/nam/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-export model=nssl4arw
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/dcom/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-exit
-
-export model=nam
-export MODEL=`echo $model | tr a-z A-Z`
-export modpath=/gpfs/dell1/nco/ops/com/nam/prod
-${YLMETPLUS_PATH}/ush/master_metplus.py \
-  -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
-  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
-
-exit
-
 
 exit
 

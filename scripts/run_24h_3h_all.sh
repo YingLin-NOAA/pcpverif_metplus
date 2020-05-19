@@ -84,6 +84,60 @@ ${YLMETPLUS_PATH}/ush/master_metplus.py \
   -c ${YLMETPLUS_PATH}/yl/parm/models/${model}_${acc}.conf \
   -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
 
+# HREF avrg/mean/pmmn:
+export modpath=/gpfs/hps/nco/ops/com/hiresw/prod
+
+export mtype=avrg
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export mtype=mean
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export mtype=pmmn
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+# HREFv3 avrg/lavg/lpmm/mean/pmmn:
+
+export modpath=/gpfs/hps2/ptmp/Matthew.Pyle/com/hiresw/test
+export mtype=avrg
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefv3ens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export mtype=lavg
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefv3ens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export mtype=lpmm
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefv3ens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export mtype=mean
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefv3ens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
+export mtype=pmmn
+export MTYPE=`echo $mtype | tr a-z A-Z`
+${YLMETPLUS_PATH}/ush/master_metplus.py \
+  -c ${YLMETPLUS_PATH}/yl/parm/models/hrefv3ens_24h.conf \
+  -c ${YLMETPLUS_PATH}/yl/parm/system.conf.dell
+
 # 3h ctc/sl1l2:
 export acc=03h # for stats output prefix in GridStatConfig
 
